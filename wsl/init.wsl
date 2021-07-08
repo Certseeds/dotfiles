@@ -1,0 +1,5 @@
+#! /bin/sh
+#/etc/init.d/ssh-agent $1
+/etc/init.d/cron $1
+/etc/init.d/ssh $1
+/etc/init.d/supervisor $1

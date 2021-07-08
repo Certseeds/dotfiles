@@ -1,0 +1,18 @@
+[cargo-new]
+name = "Certseeds"        # name to use in `authors` field
+email = "Certseeds <51754303+Certseeds@users.noreply.github.com>" # email address to use in `authors` field
+vcs = "git"              # VCS to use ('git', 'hg', 'pijul', 'fossil', 'none')
+
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+
+replace-with = 'tuna'
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+
+#replace-with = 'ustc'
+#[source.ustc]
+#registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+
+[net]
+git-fetch-with-cli = true

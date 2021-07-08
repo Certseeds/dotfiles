@@ -1,0 +1,20 @@
+[user]
+        name = Certseeds
+        email = 51754303+Certseeds@users.noreply.github.com
+        signingkey = *
+[commit]
+        template = /home/nanoseeds/template/.gitcommit
+        gpgsign = true
+[alias]
+        commits = commit -s
+        checkoutb = checkout -b
+        mergeno = merge --no-ff
+[core]
+        editor = vim
+        autocrlf = input
+        ignorecase = false
+[gui]
+        encoding = utf-8
+[i18n]
+        commitencoding = utf-8
+        logoutputencoding = utf-8

@@ -1,0 +1,17 @@
+# local is ~/.ssh/config
+Host *
+    PreferredAuthentications publickey
+    
+Host github
+    User git
+    HostName github.com
+    Port 22
+    IdentityFile ~/.ssh/github
+
+Host github-ssh
+    User git
+    HostName ssh.github.com
+    Port 443
+    IdentityFile ~/.ssh/github
+    TCPKeepAlive yes
+    # ProxyCommand connect socks5://127.0.0.1:1080 %h %p
