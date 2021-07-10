@@ -6,4 +6,6 @@
 # @LastEditors: nanoseeds
 # @LastEditTime: 2021-02-10 17:27:46
 ### 
-* eol=lf
+*	text=auto
+*.sh text=lf
+*.ps1 text=crlf

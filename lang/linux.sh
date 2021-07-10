@@ -23,7 +23,7 @@ done
 unset files
 
 sudo ln -s "$(pwd)"/.condarc "${HOME}/.condarc"
-sudo ln -s "$(pwd)"/cargo.config.toml "${HOME}/.cargo/config" 
+sudo ln -s "$(pwd)"/cargo.config.toml "${HOME}/.cargo/config"
 sudo ln -s "$(pwd)"/deamon.json "/etc/docker/deamon.json"
 sudo ln -s "$(pwd)"/init.gradle "${HOME}/.gradle/init.gradle"
 sudo ln -s "$(pwd)"/.pip/pip.conf "${HOME}/.pip/pip.conf"

@@ -1,11 +1,8 @@
 #!/bin/bash
 set -eoux pipefail
-path=("ubuntu/sources")
+path=("ubuntu/sources" "git" "lang" "zsh" "wsl")
 for item in "${path[@]}"; do
     ./"${item}"/linux.sh
 done
 
-./ubuntu/sources/linux.sh
-./git/linux.sh
-./lang/linux.sh
-./zsh/linux.sh
+#./ubuntu/sources/linux.sh

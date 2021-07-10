@@ -1,10 +1,10 @@
 [user]
         name = Certseeds
         email = 51754303+Certseeds@users.noreply.github.com
-        signingkey = *
+        # signingkey = *
 [commit]
-        template = /home/nanoseeds/template/.gitcommit
-        gpgsign = true
+        template = ~/dotfiles/git/.gitcommit
+        # gpgsign = true
 [alias]
         commits = commit -s
         checkoutb = checkout -b
@@ -18,3 +18,5 @@
 [i18n]
         commitencoding = utf-8
         logoutputencoding = utf-8
+[init]
+  defaultBranch = master
