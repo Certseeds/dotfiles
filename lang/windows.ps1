@@ -11,7 +11,7 @@ $script = {
         }
         New-Item -Path "$folder\pip.ini" `
         -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\pip.ini"
+        -Value "$userPath\dotfiles\lang\pip.conf"
         # test by `pip config list -v`
     }
     function conf-mvn(){
