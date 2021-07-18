@@ -3,7 +3,7 @@
         email = 51754303+Certseeds@users.noreply.github.com
         # signingkey = *
 [commit]
-        template = ~/dotfiles/git/.gitcommit
+        template = ~/dotfiles/git/gitcommit
         # gpgsign = true
 [alias]
         commits = commit -s
