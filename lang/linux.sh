@@ -12,8 +12,9 @@ for item in "${folders[@]}"; do
 done
 unset folders
 
-files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
-    "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml")
+files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json" \
+    "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"\
+    "${HOME}/.vimrc")
 for item in "${files[@]}"; do
     echo "${item}"
     if [[ -f "${item}" ]]; then
@@ -28,6 +29,7 @@ sudo ln -s "$(pwd)"/daemon.json "/etc/docker/daemon.json"
 sudo ln -s "$(pwd)"/init.gradle "${HOME}/.gradle/init.gradle"
 sudo ln -s "$(pwd)"/pip.conf "${HOME}/.pip/pip.conf"
 sudo ln -s "$(pwd)"/settings.xml "${HOME}/.m2/settings.xml"
+sudo ln -s "$(pwd)"/.vimrc "${HOME}/.vimrc"
 
 unset NOW_TIME
 

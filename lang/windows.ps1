@@ -19,7 +19,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config")
+        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc")
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -73,7 +73,12 @@ $script = {
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\cargo.config.toml"
     }
-
+    function conf-vim() {
+        $folder = "$userPath"
+        New-Item -Path "$folder\.vimrc" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\.vimrc"
+    }
     function main {
         ensure_dir
         backup_exists_file

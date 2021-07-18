@@ -1,0 +1,34 @@
+set nocompatible
+syntax on
+set showmode
+set showcmd
+set mouse=a
+set encoding=utf-8
+set t_Co=256
+filetype indent on
+set autoindent
+set shiftwidth=4
+set tabstop=2
+set expandtab
+set softtabstop=2
+set number
+set relativenumber
+set cursorline
+set textwidth=80
+set wrap
+set showmatch
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set spell spelllang=en_us
+set undofile
+set backup
+set swapfile
+set noerrorbells
+set visualbell
+set autoread
+set listchars=tab:»■,trail:■
+set list
+set wildmenu
+set wildmode=longest:list,full
