@@ -17,6 +17,7 @@ $script = {
     }
 
     function main {
+        conf-pwsh
     }
     function after(){
         cd ..

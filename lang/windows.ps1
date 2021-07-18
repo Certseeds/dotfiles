@@ -55,7 +55,11 @@ $script = {
     }
 
     function main {
-        
+        conf-cargo
+        conf-pip
+        conf-mvn
+        conf-gradle
+        conf-conda
     }
     function after(){
         cd ..

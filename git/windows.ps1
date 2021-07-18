@@ -13,14 +13,20 @@ $script = {
     }    
     
     function conf-ssh(){
-        New-Item -Path $userPath"\.gitconfig" `
+        $folder="$userPath\.ssh"
+        $T_F=(Test-Path $folder)
+        if (!$T_F){
+            mkdir $folder
+        }
+        New-Item -Path $folder"\config" `
         -ItemType SymbolicLink `
-        -Value $userPath"\dotfiles\git\.gitconfig" 
+        -Value $userPath"\dotfiles\git\.ssh.config" 
         # `~/.gitconfig`
         # `git config --list`
     }    
     function main {
-        
+        conf-git
+        conf-ssh
     }
     function after(){
         cd ..
