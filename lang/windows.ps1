@@ -1,68 +1,86 @@
 $script = {
-    $userPath="C:\Users\${env:USERNAME}"
-    function before(){
-        cd lang
+    $userPath = "C:\Users\${env:USERNAME}"
+    $time = "$(Get-Date -Format 'yyyy-MM-dd-HH-mm-ss')"
+    function before() {
+        Set-Location lang
     }
-    function conf-pip(){
-        $folder="$userPath\pip"
-        $T_F=(Test-Path $folder)
-        if (!$T_F){
-            mkdir $folder
+    function ensure_dir() {
+        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo")
+        foreach ($folder in $Array) {
+            $T_F = (Test-Path -Path ${folder})
+            if (!$T_F) {
+                mkdir ${folder}
+                Write-Output "${folder} create success"
+            }
+            else {
+                Write-Output "${folder} exists"
+            }
         }
-        New-Item -Path "$folder\pip.ini" `
-        -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\pip.conf"
-        # test by `pip config list -v`
     }
-    function conf-mvn(){
-        $folder="$userPath\.m2"
-        $T_F=(Test-Path $folder)
-        if (!$T_F){
-            mkdir $folder
+    function backup_exists_file() {
+        mkdir "${userPath}\dotfilesbackup\${time}"
+        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config")
+        foreach ($file in $Array) {
+            Write-Output ${file}
+            $T_F = (Test-Path -Path ${file} -PathType Leaf)
+            if ($T_F) {
+                Move-Item -Path "${file}" -Destination "${userPath}\dotfilesbackup\${time}"
+                Write-Output "mv ${file} to '${userPath}\dotfilesbackup\${time}'"
+            }
+            else {
+                Write-Output "${file} do not exists"
+            }
         }
-        New-Item -Path "$folder\settings.xml" `
-        -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\settings.xml" 
-        # `~\.m2\settings.xml`
-        # `mvn help:effective-settings`
     }
-    function conf-gradle(){
-        $folder="$userPath\.gradle"
-        $T_F=(Test-Path $folder)
-        if (!$T_F){
-            mkdir $folder
-        }
-        New-Item -Path "$folder\init.gradle" `
-        -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\init.gradle" 
-        # `~\.gradle\init.gradlel`
-    }
-    function conf-conda(){
-        New-Item -Path "$userPath\.condarc" `
-        -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\.condarc" 
-        # `conda config --show`
-    } 
-    function conf-cargo(){
-        $folder="$userPath\.cargo"
-        $T_F=(Test-Path $folder)
-        if (!$T_F){
-            mkdir $folder
-        }
-        New-Item -Path "$folder\config" `
-        -ItemType SymbolicLink `
-        -Value "$userPath\dotfiles\lang\cargo.config.toml" 
-    }
-
-    function main {
+    function conf() {
         conf-cargo
         conf-pip
         conf-mvn
         conf-gradle
         conf-conda
     }
-    function after(){
-        cd ..
+    function conf-pip() {
+        $folder = "$userPath\pip"
+        New-Item -Path "$folder\pip.ini" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\pip.conf"
+        # test by `pip config list -v`
+    }
+    function conf-mvn() {
+        $folder = "$userPath\.m2"
+        New-Item -Path "$folder\settings.xml" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\settings.xml"
+        # `~\.m2\settings.xml`
+        # `mvn help:effective-settings`
+    }
+    function conf-gradle() {
+        $folder = "$userPath\.gradle"
+        New-Item -Path "$folder\init.gradle" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\init.gradle"
+        # `~\.gradle\init.gradlel`
+    }
+    function conf-conda() {
+        New-Item -Path "$userPath\.condarc" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\.condarc"
+        # `conda config --show`
+    }
+    function conf-cargo() {
+        $folder = "$userPath\.cargo"
+        New-Item -Path "$folder\config" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\cargo.config.toml"
+    }
+
+    function main {
+        ensure_dir
+        backup_exists_file
+        conf
+    }
+    function after() {
+        Set-Location ..
     }
     before
     main
