@@ -16,11 +16,15 @@ for item in "${files[@]}"; do
 done
 unset files
 
-cp "./gitconfig.template" "./.gitconfig"
-cp "./ssh.config.template" "./.ssh.config"
+cp -p "./gitconfig.template" "./.gitconfig"
+cp -p "./ssh.config.template" "./.ssh.config"
 
 sudo ln -s "$(pwd)"/.gitconfig "${HOME}"/.gitconfig
 sudo ln -s "$(pwd)"/.ssh.config "${HOME}"/.ssh/config
+
+sudo chown -R "${USER}":"${USER}" "${HOME}"/.ssh
+
+sudo chmod 0755 "${HOME}"/.ssh
 
 unset NOW_TIME
 
