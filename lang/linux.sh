@@ -12,8 +12,8 @@ for item in "${folders[@]}"; do
 done
 unset folders
 
-files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json" \
-    "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"\
+files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
+    "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"
     "${HOME}/.vimrc")
 for item in "${files[@]}"; do
     echo "${item}"
@@ -30,6 +30,14 @@ sudo ln -s "$(pwd)"/init.gradle "${HOME}/.gradle/init.gradle"
 sudo ln -s "$(pwd)"/pip.conf "${HOME}/.pip/pip.conf"
 sudo ln -s "$(pwd)"/settings.xml "${HOME}/.m2/settings.xml"
 sudo ln -s "$(pwd)"/.vimrc "${HOME}/.vimrc"
+
+sudo chown -R "${USER}":"${USER}" "${HOME}/.condarc"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.cargo/config"
+sudo chown -R "${USER}":"${USER}" "/etc/docker/daemon.json"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.gradle/init.gradle"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.pip/pip.conf"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.m2/settings.xml"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.vimrc"
 
 unset NOW_TIME
 

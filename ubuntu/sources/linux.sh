@@ -21,9 +21,9 @@ if [[ -f "/etc/apt/sources.list" ]]; then
 fi
 cd "${SUBPATH}"
 if [[ "${UBUNTU_VERSION}" == "${UBUNTU1804}" ]]; then
-    cp "sources_aliyun_1804.list.backup" "/etc/apt/sources.list"
+    cp -p "sources_aliyun_1804.list.backup" "/etc/apt/sources.list"
 elif [[ "${UBUNTU_VERSION}" == "${UBUNTU2004}" ]]; then
-    cp "sources_aliyun_2004.list.backup" "/etc/apt/sources.list"
+    cp -p "sources_aliyun_2004.list.backup" "/etc/apt/sources.list"
 fi
 cd ./../../
 
