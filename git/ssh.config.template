@@ -2,13 +2,13 @@
 Host *
     PreferredAuthentications publickey
 
-Host github22
-    User git
+Host github.com # ${Host} will be use in `git remote -v`
+    User git # ${User}@${HostName}:${Port}
     HostName github.com
     Port 22
     IdentityFile ~/.ssh/github.pri.key
 
-Host github-ssh-443
+Host ssh.github.com
     User git
     HostName ssh.github.com
     Port 443
