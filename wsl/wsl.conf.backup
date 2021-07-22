@@ -1,5 +1,5 @@
 [automount]
 enabled = true
 root = /mnt/
-options = "metadata,umask=22,fmask=111"
+options = "metadata"
 mountFsTab = true

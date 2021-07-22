@@ -22,7 +22,9 @@ cp -p "./ssh.config.template" "./.ssh.config"
 sudo ln -s "$(pwd)"/.gitconfig "${HOME}"/.gitconfig
 sudo ln -s "$(pwd)"/.ssh.config "${HOME}"/.ssh/config
 
+sudo chown -R "${USER}":"${USER}" "${HOME}"/.gitconfig
 sudo chown -R "${USER}":"${USER}" "${HOME}"/.ssh
+sudo chown -R "${USER}":"${USER}" "${HOME}"/.ssh/config
 
 sudo chmod 0755 "${HOME}"/.ssh
 

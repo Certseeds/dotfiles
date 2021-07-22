@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-07-18 15:00:09
- # @LastEditTime: 2021-07-22 22:21:20
+ # @LastEditTime: 2021-07-22 23:13:53
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: \dotfiles-master\zsh\linux.sh
@@ -29,6 +29,9 @@ cp -p "$(pwd)"/LD_LIBRARY_PATH.template.sh "$(pwd)"/.LD_LIBRARY_PATH.sh
 
 sudo ln -s "$(pwd)"/.zshrc "${HOME}/.zshrc"
 sudo ln -s "$(pwd)"/miniconda3.sh "$(pwd)"/.conda.sh
+
+sudo chown -R "${USER}":"${USER}" "${HOME}/.zshrc"
+sudo chown -R "${USER}":"${USER}" "$(pwd)"/.conda.sh
 
 unset NOW_TIME
 

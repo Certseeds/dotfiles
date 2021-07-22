@@ -15,7 +15,8 @@ done
 unset files
 
 sudo ln -s "$(pwd)"/ssh.config "/etc/ssh/ssh_config"
-sudo ln -s "$(pwd)"/.condarc "${HOME}/.condarc"
+
+sudo chown -R "${USER}":"${USER}" "/etc/ssh/ssh_config"
 
 unset NOW_TIME
 
