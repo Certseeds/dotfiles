@@ -8,8 +8,10 @@ NOW_TIME=$(date --iso-8601=seconds)
 files=("/etc/proxychains4.conf"  "/etc/ssh/ssh_config")
 for item in "${files[@]}"; do
     echo "${item}"
-    if [[ -f "${item}" ]]; then
+    if [[ -e "${item}" ]]; then
         mv "${item}" "${item}.${NOW_TIME}.backup"
+    else
+        echo "${item} Missing"
     fi
 done
 unset files

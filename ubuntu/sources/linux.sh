@@ -16,7 +16,7 @@ UBUNTU2004="focal"
 NOW_TIME=$(date --iso-8601=seconds)
 SUBPATH="ubuntu/sources"
 
-if [[ -f "/etc/apt/sources.list" ]]; then
+if [[ -e "/etc/apt/sources.list" ]]; then
     mv "/etc/apt/sources.list" "/etc/apt/sources.list.${NOW_TIME}.backup"
 fi
 cd "${SUBPATH}"

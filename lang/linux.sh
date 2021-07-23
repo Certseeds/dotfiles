@@ -17,8 +17,10 @@ files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
     "${HOME}/.vimrc")
 for item in "${files[@]}"; do
     echo "${item}"
-    if [[ -f "${item}" ]]; then
+    if [[ -e "${item}" ]]; then
         mv "${item}" "${item}.${NOW_TIME}.backup"
+    else
+        echo "${item} Missing"
     fi
 done
 unset files
