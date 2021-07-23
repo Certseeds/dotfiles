@@ -6,7 +6,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function Complete # 自动补全
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete # 自动补全
 Set-PSReadlineKeyHandler -Key "Ctrl+d" -Function MenuComplete # 自动补全
 Set-PSReadlineKeyHandler -Key "Ctrl+z" -Function Undo # 自动补全
-Set-PSReadlineKeyHandler -Key "Ctrl+c" -Function Undo # 自动补全
+# Set-PSReadlineKeyHandler -Key "Ctrl+c" -Function Undo # 自动补全
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackWard # 自动补全
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward # 自动补全
 
