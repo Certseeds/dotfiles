@@ -14,7 +14,7 @@ unset folders
 
 files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
     "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"
-    "${HOME}/.vimrc")
+    "${HOME}/.vimrc" "/etc/nginx/nginx.conf")
 for item in "${files[@]}"; do
     echo "${item}"
     if [[ -e "${item}" ]]; then
@@ -32,6 +32,7 @@ sudo ln -s "$(pwd)"/init.gradle "${HOME}/.gradle/init.gradle"
 sudo ln -s "$(pwd)"/pip.conf "${HOME}/.pip/pip.conf"
 sudo ln -s "$(pwd)"/settings.xml "${HOME}/.m2/settings.xml"
 sudo ln -s "$(pwd)"/.vimrc "${HOME}/.vimrc"
+sudo cp "$(pwd)"/nginx.conf "/etc/nginx/nginx.conf"
 
 sudo chown -R "${USER}":"${USER}" "${HOME}/.condarc"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.cargo/config"
@@ -40,6 +41,7 @@ sudo chown -R "${USER}":"${USER}" "${HOME}/.gradle/init.gradle"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.pip/pip.conf"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.m2/settings.xml"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.vimrc"
+sudo chown -R "${USER}":"${USER}" "/etc/nginx/nginx.conf"
 
 unset NOW_TIME
 

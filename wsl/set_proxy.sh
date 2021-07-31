@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eoux pipefail
 ###
- # @Github: https://github.com/Certseeds/tricks
+ # @Github: https://github.com/Certseeds/dotfiles
  # @Organization: SUSTech
  # @Author: nanoseeds
  # @Date: 2020-08-21 15:00:50
