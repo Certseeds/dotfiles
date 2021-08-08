@@ -1,14 +1,10 @@
-[user]
-        name = Certseeds
-        email = 51754303+Certseeds@users.noreply.github.com
-        # signingkey = *
-[commit]
-        template = ~/dotfiles/git/gitcommit
-        # gpgsign = true
 [alias]
         commits = commit -s
         checkoutb = checkout -b
         mergeno = merge --no-ff
+[commit]
+        template = ~/dotfiles/git/gitcommit
+        # gpgsign = true
 [core]
         editor = vim
         autocrlf = input
@@ -19,4 +15,10 @@
         commitencoding = utf-8
         logoutputencoding = utf-8
 [init]
-  defaultBranch = master
+        defaultBranch = master
+[pull]
+        ff = false
+[user]
+        name = Certseeds
+        email = 51754303+Certseeds@users.noreply.github.com
+        # signingkey = *
