@@ -4,41 +4,24 @@
 // def NEXUS_PASSWORD = "password"
 
 // 阿里云 maven 服务
-def MAVEN_ALIYUN = 'http://maven.aliyun.com/nexus/content/groups/public'
+String MAVEN_ALIYUN = 'http://maven.aliyun.com/nexus/content/groups/public'
 
 allprojects {
     buildscript {
         repositories {
-            // maven {
-            //     // 需要账号密码认证的maven服务
-            //     credentials {
-            //         username NEXUS_USERNAME
-            //         password NEXUS_PASSWORD
-            //     }
-            //     url NEXUS_SERVER
-            // }
-
-            maven {
-                url MAVEN_ALIYUN
-            }
-
-            jcenter()
+            mavenCentral()
+            maven { url 'https://maven.aliyun.com/repository/jcenter' }
+            maven { url 'https://maven.aliyun.com/repository/google' }
+            maven { url 'https://maven.aliyun.com/repository/central' }
+            maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         }
     }
 
     repositories {
-        maven {
-        //     credentials {
-        //         username NEXUS_USERNAME
-        //         password NEXUS_PASSWORD
-        //     }
-        //     url NEXUS_SERVER
-        // }
-
-        maven {
-            url MAVEN_ALIYUN
-        }
-
-        jcenter()
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
     }
 }
