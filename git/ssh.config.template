@@ -9,6 +9,7 @@ Host github.com
     HostName github.com
     Port 22
     IdentityFile ~/.ssh/github.pri.key
+    ForwardAgent yes
 
 Host ssh.github.com
     User git
@@ -18,6 +19,7 @@ Host ssh.github.com
     TCPKeepAlive yes
     IdentitiesOnly yes
     TCPKeepAlive yes
+    ForwardAgent yes
     # ProxyCommand connect socks5://127.0.0.1:1080 %h %p
 
 # if it is that, the url can be `ssh://github22/${username}/${pro-name}.git`
