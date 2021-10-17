@@ -73,8 +73,7 @@ alias pcf="proxychains4"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
- git 
- z 
+ git
  zsh-syntax-highlighting
  zsh-autosuggestions)
 

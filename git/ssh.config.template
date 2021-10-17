@@ -1,6 +1,6 @@
 # local is ~/.ssh/config
-Host *
-    PreferredAuthentications publickey
+# Host *
+#
 
 # ${Host} will be use in `git remote -v`
 # ${User}@${HostName}:${Port}
@@ -10,6 +10,7 @@ Host github.com
     Port 22
     IdentityFile ~/.ssh/github.pri.key
     ForwardAgent yes
+    PreferredAuthentications publickey
 
 Host ssh.github.com
     User git
@@ -20,6 +21,7 @@ Host ssh.github.com
     IdentitiesOnly yes
     TCPKeepAlive yes
     ForwardAgent yes
+    PreferredAuthentications publickey
     # ProxyCommand connect socks5://127.0.0.1:1080 %h %p
 
 # if it is that, the url can be `ssh://github22/${username}/${pro-name}.git`
