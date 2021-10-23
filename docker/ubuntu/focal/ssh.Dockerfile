@@ -17,7 +17,7 @@ ARG USER_AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:86.1) Gecko/201
   HOME_DOTFILES_VIMRC="FROM_ENV_ARG" \
   HOME_DOTFILES_CARGO_CONFIG="FROM_ENV_ARG" \
   HOME_DOTFILES_GRADLE="FROM_ENV_ARG" \
-  HOME_DOTFILES_PIP_CONFE="FROM_ENV_ARG" \
+  HOME_DOTFILES_PIP_CONF="FROM_ENV_ARG" \
   HOME_DOTFILES_M2_SETTINGS="FROM_ENV_ARG" \
   HOME_DOTFILES_ZSH_MINICONDA3="FROM_ENV_ARG" \
   HOME_DOTFILES_ZSHRC="FROM_ENV_ARG"
@@ -40,6 +40,7 @@ RUN  echo "${ETC_SSH_SSHD_CONFIG}" > /etc/ssh/sshd_config \
 
 RUN  mkdir -p "/home/${USERNAME}/dotfiles"  \ 
   && mkdir -p "/home/${USERNAME}/dotfiles/git" \
+  && mkdir -p "/home/${USERNAME}/dotfiles/zsh" \
   && mkdir -p "/home/${USERNAME}/.cargo" \ 
   && mkdir -p "/home/${USERNAME}/.gradle" \ 
   && mkdir -p "/home/${USERNAME}/.pip" \
@@ -65,7 +66,7 @@ RUN  mkdir -p "/home/${USERNAME}/dotfiles"  \
   && ln -s  "/home/${USERNAME}/dotfiles/m2.settings.xml"  "/home/${USERNAME}/.m2/settings.xml" \
   && ln -s  "/home/${USERNAME}/dotfiles/.zshrc" "/home/${USERNAME}/.zshrc" \
   && ln -s  "/home/${USERNAME}/.oh-my-zsh" "/root/.oh-my-zsh" \
-  && ln -s  "/home/${USERNAME}/zsh_include/miniconda3.sh"   "/home/${USERNAME}/zsh_include/conda.sh" \
+  && ln -s  "/home/${USERNAME}/zsh_include/miniconda3.sh"   "/home/${USERNAME}/dotfiles/zsh/conda.sh" \
   && chown -R "${USERNAME}:root" "/home/${USERNAME}/dotfiles/git/gitconfig" \
   && chown -R "${USERNAME}:root" "/home/${USERNAME}/dotfiles/git/gitcommit" \
   && chown -R "${USERNAME}:root" "/home/${USERNAME}/dotfiles/.condarc" \
