@@ -22,9 +22,6 @@ set incsearch
 set ignorecase
 set smartcase
 set spell spelllang=en_us
-set undofile
-set backup
-set swapfile
 set noerrorbells
 set visualbell
 set autoread
@@ -32,3 +29,9 @@ set listchars=tab:»■,trail:■
 set list
 set wildmenu
 set wildmode=longest:list,full
+set undofile
+set backup
+set swapfile
+set undodir=~/.vim/undodir//
+set backupdir=~/.vim/backupdir//
+set directory=~/.vim/swapfiledir//

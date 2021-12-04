@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eoux pipefail
 
 ID="$(lsb_release -i | sed 's/Distributor ID://g' | xargs)"

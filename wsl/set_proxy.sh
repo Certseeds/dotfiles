@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eoux pipefail
 ###
  # @Github: https://github.com/Certseeds/dotfiles

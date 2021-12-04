@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eoux pipefail
 path=("ubuntu/sources" "git" "lang" "zsh" "wsl")
 for item in "${path[@]}"; do

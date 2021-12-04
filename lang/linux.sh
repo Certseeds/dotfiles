@@ -1,11 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eoux pipefail
 
 cd lang
 
 NOW_TIME=$(date --iso-8601=seconds)
 
-folders=("${HOME}/.cargo" "/etc/docker" "${HOME}/.gradle" "${HOME}/.pip" "${HOME}/.m2")
+folders=("${HOME}/.cargo" "/etc/docker" "${HOME}/.gradle" "${HOME}/.pip" "${HOME}/.m2"
+    "${HOME}/.vim/backupdir" "${HOME}/.vim/swapdir" "${HOME}/.vim/undodir")
 for item in "${folders[@]}"; do
     echo "${item}"
     mkdir -p "${item}"
