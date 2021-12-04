@@ -5,7 +5,7 @@ $script = {
         Set-Location lang
     }
     function ensure_dir() {
-        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir")
+        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg")
         foreach ($folder in $Array) {
             $T_F = (Test-Path -Path ${folder})
             if (!$T_F) {
@@ -19,7 +19,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc")
+        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc","$userPath\.gnupg\gpg.conf")
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -38,6 +38,14 @@ $script = {
         conf-mvn
         conf-gradle
         conf-conda
+        conf-gpg
+    }
+    function conf-gpg() {
+        $folder = "$userPath\.gnupg"
+        New-Item -Path "$folder\gpg.conf" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\gpg.conf"
+        # test by `pip config list -v`
     }
     function conf-pip() {
         $folder = "$userPath\pip"

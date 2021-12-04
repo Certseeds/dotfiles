@@ -131,7 +131,7 @@ RUN   wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/"${MINICON
   && bash  ./"${MINICONDA}" -b -p /home/${USERNAME}/miniconda3 \
   && rm ./"${MINICONDA}"
 
-RUN curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \
   && sudo apt-get install -y nodejs
 
 COPY ".oh-my-zsh" "/home/${USERNAME}/.oh-my-zsh"
