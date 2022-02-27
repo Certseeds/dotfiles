@@ -9,7 +9,7 @@ Host github.com
     HostName github.com
     Port 22
     ForwardAgent yes
-    IdentityFile ~/.ssh/github.pri.key
+    IdentityFile %d/.ssh/github.pri.key
     PreferredAuthentications publickey
 
 Host ssh.github.com
@@ -19,7 +19,7 @@ Host ssh.github.com
     TCPKeepAlive yes
     ForwardAgent yes
     IdentitiesOnly yes
-    IdentityFile ~/.ssh/github.pri.key
+    IdentityFile %d/.ssh/github.pri.key
     PreferredAuthentications publickey
     # ProxyCommand connect socks5://127.0.0.1:1080 %h %p
 

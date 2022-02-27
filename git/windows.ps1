@@ -52,7 +52,7 @@ $script = {
         }
         New-Item -Path $folder"\config" `
             -ItemType SymbolicLink `
-            -Value $userPath"\dotfiles\git\.ssh.config"
+            -Value $userPath"\dotfiles\git\.ssh\config"
         # `~/.gitconfig`
         # `git config --list`
     }
