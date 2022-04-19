@@ -5,6 +5,8 @@
 [commit]
         template = ~/dotfiles/git/gitcommit
         # gpgsign = true
+[tag]
+        # gpgsign = true
 [core]
         editor = vim
         autocrlf = input
