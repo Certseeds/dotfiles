@@ -11,6 +11,7 @@ Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackWard # 自动�
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward # 自动补全
 
 Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powsh/.poshtheme.json)
+$Env:TZ = 'UTC'
 # dont forget to set the windows-terminal's default font to SauceCodePro NF
 
 # name it as `Microsoft.PowerShell_profile.ps1` or `profile.ps1`

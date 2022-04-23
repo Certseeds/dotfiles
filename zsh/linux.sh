@@ -26,5 +26,7 @@ sudo chown -R "${USER}":"${USER}" "${HOME}/.zshrc"
 sudo chown -R "${USER}":"${USER}" "$(pwd)"/.conda.sh
 
 unset NOW_TIME
+ln -snf /usr/share/zoneinfo/GMT /etc/localtime
+echo "Europe/London" | sudo tee /etc/timezone > /dev/null
 
 cd ./..
