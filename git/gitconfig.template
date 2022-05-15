@@ -2,6 +2,7 @@
         commits = commit -s
         checkoutb = checkout -b
         mergeno = merge --no-ff
+        tags = tag -a -s
 [commit]
         template = ~/dotfiles/git/gitcommit
         # gpgsign = true
