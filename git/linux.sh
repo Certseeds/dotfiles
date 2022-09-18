@@ -19,7 +19,7 @@ done
 unset files
 
 # cp -p "./gitconfig.template" "./.gitconfig"
-# cp -p "./ssh.config.template" "./.ssh.config"
+# cp -p "./.ssh/config.template" "./.ssh/config"
 
 sudo ln -s "$(pwd)"/.gitconfig "${HOME}"/.gitconfig
 sudo ln -s "$(pwd)"/.ssh/config "${HOME}"/.ssh/config
