@@ -5,7 +5,8 @@ $script = {
         Set-Location lang
     }
     function ensure_dir() {
-        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg")
+        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg",
+        "$userPath\scoop\buckets")
         foreach ($folder in $Array) {
             $T_F = (Test-Path -Path ${folder})
             if (!$T_F) {
@@ -39,6 +40,7 @@ $script = {
         conf-gradle
         conf-conda
         conf-gpg
+        conf-scoop-update
     }
     function conf-gpg() {
         $folder = "$userPath\.gnupg"
@@ -86,6 +88,12 @@ $script = {
         New-Item -Path "$folder\.vimrc" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\.vimrc"
+    }
+    function conf-scoop-update() {
+        $folder = "$userPath"
+        New-Item -Path "$folder\scoop.sh" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\scoop.sh"
     }
     function main {
         ensure_dir
