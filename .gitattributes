@@ -7,5 +7,6 @@
 # @LastEditTime: 2021-02-10 17:27:46
 ###
 * text=auto
-*.sh text=lf
-*.ps1 text=crlf
+
+*.sh eol=lf
+*.ps1 eol=crlf

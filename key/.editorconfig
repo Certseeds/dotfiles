@@ -1,0 +1,2 @@
+[*.{key, pub, encry}]
+end_of_line = lf

@@ -1,0 +1,20 @@
+[*.ps1]
+end_of_line = crlf
+
+[.condarc]
+end_of_line = lf
+
+[*.toml]
+end_of_line = lf
+
+[*.json]
+end_of_line = lf
+
+[*.conf]
+end_of_line = lf
+
+[*.gradle]
+end_of_line = lf
+
+[*.xml]
+end_of_line = lf
