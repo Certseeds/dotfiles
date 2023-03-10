@@ -10,7 +10,7 @@
         # gpgsign = true
 [core]
         editor = vim
-        autocrlf = input
+        autocrlf = false
         ignorecase = false
 [gui]
         encoding = utf-8
