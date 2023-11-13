@@ -1,7 +1,7 @@
 Import-Module PSReadLine # version 2.1+
 Import-Module posh-git # scoop install posh-git
 
-Set-PSReadLineOption -PredictionSource History
+# Set-PSReadLineOption -PredictionSource History
 Set-PSReadlineKeyHandler -Key Tab -Function Complete # 自动补全
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete # 自动补全
 Set-PSReadlineKeyHandler -Key "Ctrl+d" -Function MenuComplete # 自动补全

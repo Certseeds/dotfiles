@@ -20,7 +20,8 @@
 [init]
         defaultBranch = master
 [pull]
-        ff = false
+        ff = true
+        # if you want to pull-without-ff, please fetch and merge
 [user]
         name = Certseeds
         email = 51754303+Certseeds@users.noreply.github.com

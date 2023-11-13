@@ -33,13 +33,15 @@ $script = {
         }
     }
     function conf() {
-        conf-cargo
+        conf-gpg
         conf-pip
         conf-mvn
         conf-gradle
         conf-conda
-        conf-gpg
+        conf-cargo
+        conf-vim
         conf-scoop-update
+        conf-firefox
     }
     function conf-gpg() {
         $folder = "$userPath\.gnupg"
@@ -90,7 +92,7 @@ $script = {
     }
     function conf-scoop-update() {
         $folder = "$userPath"
-        New-Item -Path "$folder\scoop.sh" `
+        New-Item -Path "$folder\scoop\buckets\scoop.sh" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\scoop.sh"
     }
