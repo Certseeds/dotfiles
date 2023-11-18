@@ -48,6 +48,9 @@ $script = {
         New-Item -Path "$folder\gpg.conf" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\gpg.conf"
+        New-Item -Path "$folder\gpg.agent.conf" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\gpg.agent.conf"
         # test by `pip config list -v`
     }
     function conf-pip() {

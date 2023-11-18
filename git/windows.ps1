@@ -19,7 +19,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\.gitconfig", "$userPath\.ssh\config")
+        $Array = ("$userPath\.gitconfig", "$userPath\.ssh\config", "$userPath\.gnupg\gpg.sshcontrol.conf")
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -35,6 +35,7 @@ $script = {
     function conf() {
         conf-git
         conf-ssh
+        conf-gpg
     }
     function conf-git() {
         New-Item -Path "$userPath\.gitconfig" `
@@ -55,6 +56,13 @@ $script = {
             -Value $userPath"\dotfiles\git\.ssh\config"
         # `~/.gitconfig`
         # `git config --list`
+    }
+    function conf-gpg() {
+        $folder = "$userPath\.gnupg"
+        New-Item -Path "$folder\gpg.sshcontrol.conf" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\git\gpg.sshcontrol.conf"
+        # test by `pip config list -v`
     }
     function main {
         ensure_dir
