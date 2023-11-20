@@ -1,2 +1,3 @@
 *.pri.key
 *.pri.key.pub
+gpg.sshcontrol.conf

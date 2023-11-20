@@ -16,7 +16,7 @@ unset folders
 files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
     "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"
     "${HOME}/.vimrc" "/etc/nginx/nginx.conf" "${HOME}/.gnupg/gpg.conf"
-    "${HOME}/.gnupg/gpg-agent.conf" "${HOME}/.gnupg/sshcontrol")
+    "${HOME}/.gnupg/gpg-agent.conf")
 for item in "${files[@]}"; do
     echo "${item}"
     if [[ -e "${item}" ]]; then
@@ -36,7 +36,6 @@ sudo ln -s "$(pwd)"/settings.xml "${HOME}/.m2/settings.xml"
 sudo ln -s "$(pwd)"/.vimrc "${HOME}/.vimrc"
 sudo ln -s "$(pwd)"/gpg.conf "${HOME}/.gnupg/gpg.conf"
 sudo ln -snf "$(pwd)"/gpg.agent.conf "${HOME}/.gnupg/gpg-agent.conf"
-sudo ln -snf "$(pwd)"/gpg.sshcontrol.conf "${HOME}/.gnupg/sshcontrol"
 sudo cp "$(pwd)"/nginx.conf "/etc/nginx/nginx.conf"
 
 sudo chown -R "${USER}":"${USER}" "${HOME}/.condarc"
@@ -49,7 +48,6 @@ sudo chown -R "${USER}":"${USER}" "${HOME}/.vimrc"
 sudo chown -R "${USER}":"${USER}" "/etc/nginx/nginx.conf"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.gnupg/gpg.conf"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.gnupg/gpg-agent.conf"
-sudo chown -R "${USER}":"${USER}" "${HOME}/.gnupg/sshcontrol"
 
 unset NOW_TIME
 
