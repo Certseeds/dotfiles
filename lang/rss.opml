@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+      <head>
+            <title>Feed Subscriptions</title>
+      </head>
+      <body>
+            <outline text="阮一峰的网络日志" title="阮一峰的网络日志" type="rss"
+                  xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
+                  htmlUrl="http://www.ruanyifeng.com/blog/" />
+            <outline text="certseeds-blog" title="certseeds-blog" type="rss"
+                  xmlUrl="https://blog.certseeds.com/index.xml" />
+      </body>
+</opml>
