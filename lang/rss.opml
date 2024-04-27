@@ -27,5 +27,11 @@
                   xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
             <outline text="WebP Cloud Services Blog" title="WebP Cloud Services Blog" type="rss"
                   xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
+            <outline text="硬盘在歌唱" title="硬盘在歌唱" type="rss"
+                  xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
+            <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed"
+                  type="rss"
+                  xmlUrl="https://blog.persistent.info/feeds/posts/default"
+                  htmlUrl="https://blog.persistent.info/" />
       </body>
 </opml>
