@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
-      <head>
-            <title>Feed Subscriptions</title>
-      </head>
-      <body>
-            <outline text="阮一峰的网络日志" title="阮一峰的网络日志" type="rss"
-                  xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
-                  htmlUrl="http://www.ruanyifeng.com/blog/" />
-            <outline text="certseeds-blog" title="certseeds-blog" type="rss"
-                  xmlUrl="https://blog.certseeds.com/index.xml"
-                  htmlUrl="https://blog.certseeds.com/" />
-            <outline text="UlyC" title="UlyC" type="rss"
-                  xmlUrl="https://ulyc.github.io//feed" htmlUrl="https://UlyC.github.io/" />
-            <outline text="美团技术团队" title="美团技术团队" type="rss"
-                  xmlUrl="https://tech.meituan.com/feed/" htmlUrl="https://tech.meituan.com/feed/" />
-            <outline text="The Atuin Blog" title="The Atuin Blog" type="rss"
-                  xmlUrl="https://blog.atuin.sh/rss/" htmlUrl="https://blog.atuin.sh/" />
-            <outline text="Microsoft AI Blogs » Feed" title="Microsoft AI Blogs » Feed" type="rss"
-                  xmlUrl="https://www.microsoft.com/en-us/ai/blog/feed/"
-                  htmlUrl="https://www.microsoft.com/en-us/ai/blog/" />
-            <outline text="Latest 10 blog posts (atom)" title="Latest 10 blog posts (atom)"
-                  type="rss"
-                  xmlUrl="https://yongyuan.name/blog/feed.xml"
-                  htmlUrl="https://yongyuan.name" />
-            <outline text="Blog RSS" title="Blog RSS" type="rss"
-                  xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
-            <outline text="WebP Cloud Services Blog" title="WebP Cloud Services Blog" type="rss"
-                  xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
-            <outline text="硬盘在歌唱" title="硬盘在歌唱" type="rss"
-                  xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
-            <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed"
-                  type="rss"
-                  xmlUrl="https://blog.persistent.info/feeds/posts/default"
-                  htmlUrl="https://blog.persistent.info/" />
-      </body>
+    <head>
+        <title>Feed Subscriptions</title>
+    </head>
+    <body>
+        <outline text="阮一峰的网络日志" title="阮一峰的网络日志" type="rss"
+            xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
+            htmlUrl="http://www.ruanyifeng.com/blog/" />
+        <outline text="certseeds-blog" title="certseeds-blog" type="rss"
+            xmlUrl="https://blog.certseeds.com/index.xml"
+            htmlUrl="https://blog.certseeds.com/" />
+        <outline text="UlyC" title="UlyC" type="rss"
+            xmlUrl="https://ulyc.github.io//feed" htmlUrl="https://UlyC.github.io/" />
+        <outline text="美团技术团队" title="美团技术团队" type="rss"
+            xmlUrl="https://tech.meituan.com/feed/" htmlUrl="https://tech.meituan.com/feed/" />
+        <outline text="The Atuin Blog" title="The Atuin Blog" type="rss"
+            xmlUrl="https://blog.atuin.sh/rss/" htmlUrl="https://blog.atuin.sh/" />
+        <outline text="Microsoft AI Blogs » Feed" title="Microsoft AI Blogs » Feed" type="rss"
+            xmlUrl="https://www.microsoft.com/en-us/ai/blog/feed/"
+            htmlUrl="https://www.microsoft.com/en-us/ai/blog/" />
+        <outline text="Latest 10 blog posts (atom)" title="Latest 10 blog posts (atom)"
+            type="rss"
+            xmlUrl="https://yongyuan.name/blog/feed.xml" htmlUrl="https://yongyuan.name" />
+        <outline text="Blog RSS" title="Blog RSS" type="rss"
+            xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
+        <outline text="WebP Cloud Services Blog" title="WebP Cloud Services Blog" type="rss"
+            xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
+        <outline text="硬盘在歌唱" title="硬盘在歌唱" type="rss"
+            xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
+        <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed"
+            type="rss"
+            xmlUrl="https://blog.persistent.info/feeds/posts/default"
+            htmlUrl="https://blog.persistent.info/" />
+        <outline text="Atom" title="Atom" type="rss"
+            xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="https://blog.codingnow.com/" />
+    </body>
 </opml>

@@ -18,3 +18,7 @@ end_of_line = lf
 
 [*.xml]
 end_of_line = lf
+
+[*.opml]
+end_of_line = lf
+insert_final_newline = true
