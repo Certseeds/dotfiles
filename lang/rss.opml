@@ -28,11 +28,22 @@
             xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
         <outline text="硬盘在歌唱" title="硬盘在歌唱" type="rss"
             xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
-        <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed"
-            type="rss"
+        <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed" type="rss"
             xmlUrl="https://blog.persistent.info/feeds/posts/default"
             htmlUrl="https://blog.persistent.info/" />
         <outline text="Atom" title="Atom" type="rss"
             xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="https://blog.codingnow.com/" />
+        <outline text="The Economist" title="The Economist" type="rss"
+            xmlUrl="https://feedx.run/rss/economist.xml" htmlUrl="https://www.economist.com" />
+        <outline text="Christian Hascheks blog" title="Christian Hascheks blog" type="rss"
+            xmlUrl="https://blog.haschek.at/rss.xml" htmlUrl="https://blog.haschek.at" />
+        <outline text="NPR Topics: News" title="NPR Topics: News" type="rss"
+            xmlUrl="https://feeds.npr.org/1001/rss.xml"
+            htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1001" />
+        <outline text="NPR Topics: Investigations" title="NPR Topics: Investigations" type="rss"
+            xmlUrl="https://feeds.npr.org/1150/rss.xml"
+            htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1150" />
+        <outline text="Blog | Sam Curry" title="Blog | Sam Curry" type="rss"
+            xmlUrl="https://samcurry.net/feed.rss" htmlUrl="https://samcurry.net" />
     </body>
 </opml>
