@@ -45,5 +45,8 @@
             htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1150" />
         <outline text="Blog | Sam Curry" title="Blog | Sam Curry" type="rss"
             xmlUrl="https://samcurry.net/feed.rss" htmlUrl="https://samcurry.net" />
+        <outline text="Thunderbird Release Notes" title="Thunderbird Release Notes" type="rss"
+            xmlUrl="https://www.thunderbird.net/en-US/thunderbird/releases/atom.xml"
+            htmlUrl="https://www.thunderbird.net//en-US/thunderbird/releases" />
     </body>
 </opml>
