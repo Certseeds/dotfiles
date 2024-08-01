@@ -1,6 +1,8 @@
 {
     "policies": {
+        "DisableAccounts": true,
         "DisableAppUpdate": true,
+        "DisablePocket": true,
         "DisableProfileRefresh": true,
         "DisableSetDesktopBackground": true
     }
