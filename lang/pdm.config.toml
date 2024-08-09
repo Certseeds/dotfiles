@@ -1,0 +1,9 @@
+[pypi]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+# "${HOME}\AppData\Local\pdm\pdm\config.toml"
+
+# [[tool.pdm.source]]
+# name = "pytorch"
+# verify_ssl = True
+# url = "https://download.pytorch.org/whl/cu${cuversion}"
+# include_packages = ["torch", "torchvision", "torchaudio", "nvidia-*"]

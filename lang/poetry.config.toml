@@ -1,0 +1,14 @@
+[virtualenvs]
+in-project = true
+# before poetry init, create .venv in project root
+
+[keyring]
+enabled = false # in linux, it's a problem
+
+# refer <https://python-poetry.org/docs/repositories/>
+# it seems there is a long way to config global pypi url
+# `poetry source add --priority=primary tsinghua https://pypi.tuna.tsinghua.edu.cn/simple/`
+# `poetry source add --priority=supplemental aliyun https://mirrors.aliyun.com/pypi/simple`
+# `poetry source add --priority=explicit pytorch-gpu-src-${cuversion} https://download.pytorch.org/whl/${cuversion}`
+## work with `poetry add --source pytorch-gpu-src-${cuversion} torch==${version}+${cuversion}`
+# `"${HOME}\AppData\Roaming\pypoetry\config.toml"`

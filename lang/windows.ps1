@@ -5,7 +5,7 @@ $script = {
         Set-Location lang
     }
     function ensure_dir() {
-        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg", "$userPath\scoop\buckets")
+        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg", "$userPath\scoop\buckets", "$userPath\AppData\Roaming\pypoetry","$userPath\AppData\Local\pdm")
         foreach ($folder in $Array) {
             $T_F = (Test-Path -Path ${folder})
             if (!$T_F) {
@@ -19,7 +19,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc", "$userPath\.gnupg\gpg.conf")
+        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc", "$userPath\.gnupg\gpg.conf","$userPath\AppData\Roaming\pypoetry\config.toml","$userPath\AppData\Local\pdm\config.toml" )
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -42,6 +42,8 @@ $script = {
         conf-vim
         conf-scoop-update
         conf-firefox
+        conf-pdm
+        conf-poetry
     }
     function conf-gpg() {
         $folder = "$userPath\.gnupg"
@@ -108,6 +110,20 @@ $script = {
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\firefox.policies.json"
     }
+    function conf-pdm() {
+        $folder = "$userPath\AppData\Local\pdm"
+        New-Item -Path "$folder\config.toml" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\pdm.config.toml"
+    }
+    # check by `pdm config`
+    function conf-poetry() {
+        $folder = "$userPath\AppData\Roaming\pypoetry"
+        New-Item -Path "$folder\config.toml" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\poetry.config.toml"
+    }
+    # check by `poetry config --list`
     function main {
         ensure_dir
         backup_exists_file
