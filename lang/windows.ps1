@@ -19,7 +19,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc", "$userPath\.gnupg\gpg.conf","$userPath\AppData\Roaming\pypoetry\config.toml","$userPath\AppData\Local\pdm\config.toml" )
+        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config", "$userPath\.vimrc", "$userPath\.gnupg\gpg.conf","$userPath\AppData\Roaming\pypoetry\config.toml","$userPath\AppData\Local\pdm\pdm\config.toml" )
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -111,7 +111,7 @@ $script = {
             -Value "$userPath\dotfiles\lang\firefox.policies.json"
     }
     function conf-pdm() {
-        $folder = "$userPath\AppData\Local\pdm"
+        $folder = "$userPath\AppData\Local\pdm\pdm"
         New-Item -Path "$folder\config.toml" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\pdm.config.toml"
