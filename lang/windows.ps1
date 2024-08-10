@@ -5,7 +5,7 @@ $script = {
         Set-Location lang
     }
     function ensure_dir() {
-        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg", "$userPath\scoop\buckets", "$userPath\AppData\Roaming\pypoetry","$userPath\AppData\Local\pdm")
+        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg", "$userPath\scoop\buckets", "$userPath\AppData\Roaming\pypoetry","$userPath\AppData\Local\pdm\pdm")
         foreach ($folder in $Array) {
             $T_F = (Test-Path -Path ${folder})
             if (!$T_F) {
