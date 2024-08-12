@@ -9,7 +9,7 @@ main() {
     local IMAGE_NAME="sshable"
     podman build \
         -f "$(pwd)"/sshable/ssh.dockerfile \
-        -t "${SOURCE}"/"${USERNAME}":"${IMAGE_NAME}" \
+        -t "${SOURCE}"/"${USERNAME}"/"${IMAGE_NAME}" \
         .
 }
 main
