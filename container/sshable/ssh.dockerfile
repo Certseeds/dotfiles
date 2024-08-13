@@ -23,7 +23,7 @@ RUN echo "root:root" | chpasswd \
   && LANG="zh_SG.UTF-8" \
   && useradd "${USERNAME}" -m -g sudo -s /usr/bin/bash \
   && echo "${USERNAME}:${USERNAME}" | chpasswd \
-  && ln -sf /usr/share/zoneinfo/Asia/Singapore /etc/localtime
+  && ln -snf /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 
 ENTRYPOINT ["/bin/bash", "-c", "service ssh restart && bash"]
 

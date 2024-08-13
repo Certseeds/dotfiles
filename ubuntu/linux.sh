@@ -16,8 +16,8 @@ for item in "${files[@]}"; do
 done
 unset files
 
-sudo ln -s "$(pwd)"/ssh.config "/etc/ssh/ssh_config"
-sudo ln -s "$(pwd)"/sshd_config.conf "/etc/ssh/sshd_config"
+sudo ln -snf "$(pwd)"/ssh.config "/etc/ssh/ssh_config"
+sudo ln -snf "$(pwd)"/sshd_config.conf "/etc/ssh/sshd_config"
 
 sudo chown -R "${USER}":"${USER}" "/etc/ssh/ssh_config"
 sudo chown -R "${USER}":"${USER}" "/etc/ssh/sshd_config"

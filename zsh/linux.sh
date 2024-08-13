@@ -19,8 +19,8 @@ unset files
 # cp -p "$(pwd)"/texlive.template.sh "$(pwd)"/.texlive.sh
 # cp -p "$(pwd)"/LD_LIBRARY_PATH.template.sh "$(pwd)"/.LD_LIBRARY_PATH.sh
 
-sudo ln -s "$(pwd)"/.zshrc "${HOME}/.zshrc"
-sudo ln -s "$(pwd)"/miniconda3.sh "$(pwd)"/.conda.sh
+sudo ln -snf "$(pwd)"/.zshrc "${HOME}/.zshrc"
+sudo ln -snf "$(pwd)"/miniconda3.sh "$(pwd)"/.conda.sh
 
 sudo chown -R "${USER}":"${USER}" "${HOME}/.zshrc"
 sudo chown -R "${USER}":"${USER}" "$(pwd)"/.conda.sh

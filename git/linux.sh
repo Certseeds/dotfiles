@@ -21,8 +21,8 @@ unset files
 # cp -p "./gitconfig.template" "./.gitconfig"
 # cp -p "./.ssh/config.template" "./.ssh/config"
 
-sudo ln -s "$(pwd)"/.gitconfig "${HOME}"/.gitconfig
-sudo ln -s "$(pwd)"/.ssh/config "${HOME}"/.ssh/config
+sudo ln -snf "$(pwd)"/.gitconfig "${HOME}"/.gitconfig
+sudo ln -snf "$(pwd)"/.ssh/config "${HOME}"/.ssh/config
 
 sudo chown -R "${USER}":"${USER}" "${HOME}"/.gitconfig
 sudo chown -R "${USER}":"${USER}" "${HOME}"/.ssh
