@@ -8,8 +8,7 @@
             xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
             htmlUrl="http://www.ruanyifeng.com/blog/" />
         <outline text="certseeds-blog" title="certseeds-blog" type="rss"
-            xmlUrl="https://blog.certseeds.com/index.xml"
-            htmlUrl="https://blog.certseeds.com/" />
+            xmlUrl="https://blog.certseeds.com/index.xml" htmlUrl="https://blog.certseeds.com/" />
         <outline text="UlyC" title="UlyC" type="rss"
             xmlUrl="https://ulyc.github.io//feed" htmlUrl="https://UlyC.github.io/" />
         <outline text="美团技术团队" title="美团技术团队" type="rss"
@@ -19,8 +18,7 @@
         <outline text="Microsoft AI Blogs » Feed" title="Microsoft AI Blogs » Feed" type="rss"
             xmlUrl="https://www.microsoft.com/en-us/ai/blog/feed/"
             htmlUrl="https://www.microsoft.com/en-us/ai/blog/" />
-        <outline text="Latest 10 blog posts (atom)" title="Latest 10 blog posts (atom)"
-            type="rss"
+        <outline text="Latest 10 blog posts (atom)" title="Latest 10 blog posts (atom)" type="rss"
             xmlUrl="https://yongyuan.name/blog/feed.xml" htmlUrl="https://yongyuan.name" />
         <outline text="Blog RSS" title="Blog RSS" type="rss"
             xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
@@ -31,10 +29,10 @@
         <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed" type="rss"
             xmlUrl="https://blog.persistent.info/feeds/posts/default"
             htmlUrl="https://blog.persistent.info/" />
-        <outline text="Atom" title="Atom" type="rss"
-            xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="https://blog.codingnow.com/" />
         <outline text="The Economist" title="The Economist" type="rss"
             xmlUrl="https://feedx.run/rss/economist.xml" htmlUrl="https://www.economist.com" />
+        <outline text="Atom" title="Atom" type="rss"
+            xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="https://blog.codingnow.com/" />
         <outline text="Christian Hascheks blog" title="Christian Hascheks blog" type="rss"
             xmlUrl="https://blog.haschek.at/rss.xml" htmlUrl="https://blog.haschek.at" />
         <outline text="NPR Topics: News" title="NPR Topics: News" type="rss"
@@ -48,5 +46,7 @@
         <outline text="Thunderbird Release Notes" title="Thunderbird Release Notes" type="rss"
             xmlUrl="https://www.thunderbird.net/en-US/thunderbird/releases/atom.xml"
             htmlUrl="https://www.thunderbird.net//en-US/thunderbird/releases" />
+        <outline text="DuBlog" title="DuBlog" type="rss"
+            xmlUrl="https://dublog.net/index.xml" htmlUrl="https://dublog.net/" />
     </body>
 </opml>
