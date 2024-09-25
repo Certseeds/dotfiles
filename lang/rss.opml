@@ -48,5 +48,9 @@
             htmlUrl="https://www.thunderbird.net//en-US/thunderbird/releases" />
         <outline text="DuBlog" title="DuBlog" type="rss"
             xmlUrl="https://dublog.net/index.xml" htmlUrl="https://dublog.net/" />
+        <outline text="Rubenerd" title="Rubenerd" type="rss"
+            xmlUrl="https://rubenerd.com/feed/" htmlUrl="https://rubenerd.com/" />
+        <outline text="Gokberk Yaltirakli" title="Gokberk Yaltirakli" type="rss"
+            xmlUrl="https://www.gkbrk.com/feed.xml" htmlUrl="https://www.gkbrk.com/" />
     </body>
 </opml>
