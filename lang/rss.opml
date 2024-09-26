@@ -52,5 +52,7 @@
             xmlUrl="https://rubenerd.com/feed/" htmlUrl="https://rubenerd.com/" />
         <outline text="Gokberk Yaltirakli" title="Gokberk Yaltirakli" type="rss"
             xmlUrl="https://www.gkbrk.com/feed.xml" htmlUrl="https://www.gkbrk.com/" />
+        <outline text="Jonas Hietala" title="Jonas Hietala" type="rss"
+            xmlUrl="https://www.jonashietala.se/feed.xml" htmlUrl="https://www.jonashietala.se/" />
     </body>
 </opml>
