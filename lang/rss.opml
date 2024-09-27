@@ -54,5 +54,7 @@
             xmlUrl="https://www.gkbrk.com/feed.xml" htmlUrl="https://www.gkbrk.com/" />
         <outline text="Jonas Hietala" title="Jonas Hietala" type="rss"
             xmlUrl="https://www.jonashietala.se/feed.xml" htmlUrl="https://www.jonashietala.se/" />
+        <outline text="Two-Bit History" title="Two-Bit History" type="rss"
+            xmlUrl="https://twobithistory.org/feed.xml" htmlUrl="https://twobithistory.org/" />
     </body>
 </opml>
