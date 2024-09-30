@@ -56,5 +56,19 @@
             xmlUrl="https://www.jonashietala.se/feed.xml" htmlUrl="https://www.jonashietala.se/" />
         <outline text="Two-Bit History" title="Two-Bit History" type="rss"
             xmlUrl="https://twobithistory.org/feed.xml" htmlUrl="https://twobithistory.org/" />
+        <outline title="LowTech" text="LowTech">
+            <outline text="Obsolete-Technology" title="Obsolete-Technology" type="rss"
+                xmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/index.xml"
+                htmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/" />
+            <outline text="Low-Tech-Solution" title="Low-Tech-Solution" type="rss"
+                xmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/index.xml"
+                htmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/" />
+            <outline text="High-Tech-Problem" title="HighTechProblem" type="rss"
+                xmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/index.xml"
+                htmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/" />
+            <outline text="Low-Tech-Main" title="Low-Tech-outside" type="rss"
+                xmlUrl="https://solar.lowtechmagazine.com/index.xml"
+                htmlUrl="https://solar.lowtechmagazine.com/" />
+        </outline>
     </body>
 </opml>
