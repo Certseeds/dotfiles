@@ -70,5 +70,9 @@
                 xmlUrl="https://solar.lowtechmagazine.com/index.xml"
                 htmlUrl="https://solar.lowtechmagazine.com/" />
         </outline>
+        <outline text="Loris Cro&#39;s Personal Website" title="Loris Cro&#39;s Personal Website"
+            type="rss" xmlUrl="https://kristoff.it/index.xml" htmlUrl="https://kristoff.it/" />
+        <outline text="Nick Botticelli" title="Nick Botticelli" type="rss"
+            xmlUrl="https://nickb.website/feed.xml" htmlUrl="https://nickb.website/" />
     </body>
 </opml>
