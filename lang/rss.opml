@@ -74,5 +74,7 @@
             type="rss" xmlUrl="https://kristoff.it/index.xml" htmlUrl="https://kristoff.it/" />
         <outline text="Nick Botticelli" title="Nick Botticelli" type="rss"
             xmlUrl="https://nickb.website/feed.xml" htmlUrl="https://nickb.website/" />
+        <outline text="Nekonull&#39;s Garden" title="Nekonull&#39;s Garden" type="rss"
+            xmlUrl="https://nekonull.me/index.xml" htmlUrl="https://nekonull.me/" />
     </body>
 </opml>
