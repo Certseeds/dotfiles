@@ -15,7 +15,7 @@ for item in "${folders[@]}"; do
 done
 unset folders
 
-files=("${HOME}/.condarc" "${HOME}/.cargo/config" "/etc/docker/deamon.json"
+files=("${HOME}/.condarc" "${HOME}/.cargo/config.toml" "/etc/docker/deamon.json"
     "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"
     "${HOME}/.vimrc" "/etc/nginx/nginx.conf" "${HOME}/.gnupg/gpg.conf"
     "${HOME}/.gnupg/gpg-agent.conf" "${HOME}/.config/pypoetry/config.toml"
@@ -32,7 +32,7 @@ done
 unset files
 
 sudo ln -snf "$(pwd)"/.condarc "${HOME}/.condarc"
-sudo ln -snf "$(pwd)"/cargo.config.toml "${HOME}/.cargo/config"
+sudo ln -snf "$(pwd)"/cargo.config.toml "${HOME}/.cargo/config.toml"
 sudo ln -snf "$(pwd)"/daemon.json "/etc/docker/daemon.json"
 sudo ln -snf "$(pwd)"/init.gradle "${HOME}/.gradle/init.gradle"
 sudo ln -snf "$(pwd)"/pip.conf "${HOME}/.pip/pip.conf"
@@ -45,7 +45,7 @@ sudo ln -snf "$(pwd)"/pdm.config.toml "${HOME}/.config/pdm/config.toml"
 # sudo cp "$(pwd)"/nginx.conf "/etc/nginx/nginx.conf"
 
 sudo chown -R "${USER}":"${USER}" "${HOME}/.condarc"
-sudo chown -R "${USER}":"${USER}" "${HOME}/.cargo/config"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.cargo/config.toml"
 sudo chown -R "${USER}":"${USER}" "/etc/docker/daemon.json"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.gradle/init.gradle"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.pip/pip.conf"
