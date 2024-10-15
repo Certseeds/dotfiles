@@ -78,7 +78,7 @@
             xmlUrl="https://nekonull.me/index.xml" htmlUrl="https://nekonull.me/" />
         <outline text="Blog about computers" title="Blog about computers" type="rss"
             xmlUrl="https://vitonsky.net/rss.xml" htmlUrl="https://vitonsky.net" />
-        <outline text="Kagi Blog" title="Kagi Blog" type="rss"
-            xmlUrl="http://blog.kagi.com/rss.xml" htmlUrl="https://blog.kagi.com" />
+        <outline text="the jsomers.net blog" title="the jsomers.net blog" type="rss"
+            xmlUrl="http://jsomers.net/blog/feed" htmlUrl="https://jsomers.net/blog" />
     </body>
 </opml>
