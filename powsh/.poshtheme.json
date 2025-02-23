@@ -6,116 +6,113 @@
             "alignment": "left",
             "segments": [
                 {
-                    "type": "python",
+                    "foreground": "lightBlue",
                     "style": "plain",
-                    "foreground": "white",
-                    "properties": {
-                        "prefix": "(",
-                        "postfix": ")",
-                        "display_version": false
-                    }
-                }
-            ]
-        },
-        {
-            "type": "newline"
-        },
-        {
-            "type": "prompt",
-            "alignment": "left",
-            "segments": [
-                {
-                    "type": "envvar",
-                    "style": "powerline",
-                    "foreground": "white",
-                    "properties": {
-                        "prefix": "(",
-                        "var_name": "CONDA_DEFAULT_ENV",
-                        "postfix": ") "
-                    }
+                    "type": "text",
+                    "template": "# "
                 },
                 {
-                    "type": "text",
+                    "foreground": "lightBlue",
                     "style": "plain",
+                    "type": "session",
+                    "template": "{{ .UserName }} "
+                },
+                {
+                    "foreground": "white",
+                    "style": "plain",
+                    "type": "session",
+                    "template": "@"
+                },
+                {
+                    "foreground": "green",
+                    "style": "plain",
+                    "type": "session",
+                    "template": "pwsh "
+                },
+                {
+                    "foreground": "lightGreen",
+                    "style": "plain",
+                    "type": "session",
+                    "template": "{{ .HostName }} "
+                },
+                {
+                    "foreground": "white",
+                    "style": "plain",
+                    "type": "session",
+                    "template": "in "
+                },
+                {
+                    "foreground": "lightYellow",
+                    "style": "plain",
+                    "type": "path",
+                    "template": "{{ .Path }} "
+                },
+                {
+                    "foreground": "white",
+                    "style": "plain",
+                    "type": "session",
+                    "template": "on "
+                },
+                {
+                    "properties": {
+                        "fetch_status": true
+                    },
+                    "style": "plain",
+                    "type": "git",
+                    "template": "git: "
+                },
+                {
                     "foreground": "lightBlue",
                     "properties": {
-                        "prefix": "",
-                        "text": "#"
-                    }
-                },
-                {
-                    "type": "root",
+                        "branch_icon": "\ue725 ",
+                        "cherry_pick_icon": "\ue29b ",
+                        "commit_icon": "\uf417 ",
+                        "fetch_status": false,
+                        "fetch_upstream_icon": false,
+                        "merge_icon": "\ue727 ",
+                        "no_commits_icon": "\uf0c3 ",
+                        "rebase_icon": "\ue728 ",
+                        "revert_icon": "\uf0e2 ",
+                        "tag_icon": "\uf412 "
+                    },
                     "style": "plain",
-                    "foreground": "red",
-                    "properties": {
-                        "root_icon": "\b\b\b%"
-                    }
-                },
-                {
-                    "type": "session",
-                    "style": "plain",
-                    "properties": {
-                        "user_info_separator": " <darkGray>@pwsh</> ",
-                        "prefix": "",
-                        "user_color": "cyan",
-                        "host_color": "green"
-                    }
-                },
-                {
-                    "type": "path",
-                    "style": "plain",
-                    "foreground": "lightYellow",
-                    "properties": {
-                        "prefix": "<darkGray>in </>",
-                        "style": "full"
-                    }
-                },
-                {
                     "type": "git",
-                    "style": "plain",
-                    "properties": {
-                        "prefix": "<darkGray>on</> <white>git:</>"
-                    }
+                    "template": "{{ .HEAD }} "
                 },
                 {
-                    "type": "time",
-                    "style": "plain",
-                    "foreground": "darkGray",
                     "properties": {
-                        "prefix": "[",
-                        "postfix": "]"
-                    }
-                },
-                {
-                    "type": "exit",
-                    "style": "plain",
+                        "fetch_status": true
+                    },
                     "foreground": "red",
+                    "style": "plain",
+                    "type": "git",
+                    "template": "{{ if .Working.Changed }}x{{ end }} "
+                },
+                {
                     "properties": {
-                        "prefix": " C:",
-                        "always_numeric": true
-                    }
+                        "time_format": "15:04:05"
+                    },
+                    "foreground": "darkGray",
+                    "style": "plain",
+                    "type": "time",
+                    "template": " [{{ .CurrentDate | date .Format }}]"
                 }
             ]
         },
         {
-            "type": "newline"
-        },
-        {
             "type": "prompt",
             "alignment": "left",
+            "newline": true,
             "segments": [
                 {
-                    "type": "text",
-                    "style": "plain",
                     "foreground": "lightRed",
-                    "properties": {
-                        "prefix": "",
-                        "text": "$",
-                        "postfix": ""
-                    }
+                    "style": "plain",
+                    "type": "text",
+                    "template": "$"
                 }
             ]
         }
     ],
+    "version": 3,
     "final_space": true
 }

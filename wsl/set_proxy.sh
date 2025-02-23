@@ -5,7 +5,6 @@ set -eoux pipefail
  # @Author: nanoseeds
  # @Date: 2020-08-21 15:00:50
  # @LastEditors: nanoseeds
- # @LastEditTime: 2020-08-31 12:14:59
 ### 
 # only work for wsl
 hostip=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }')

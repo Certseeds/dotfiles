@@ -1,4 +1,4 @@
-Import-Module PSReadLine # version 2.1+
+Import-Module PSReadLine # scoop install PSReadLine
 Import-Module posh-git # scoop install posh-git
 
 # Set-PSReadLineOption -PredictionSource History
