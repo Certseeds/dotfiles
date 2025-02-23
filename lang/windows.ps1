@@ -5,7 +5,26 @@ $script = {
         Set-Location lang
     }
     function ensure_dir() {
-        $Array = ("$userPath\dotfilesbackup", "$userPath\pip", "$userPath\.m2", "$userPath\.gradle", "$userPath\.gradle", "$userPath\.cargo", "$userPath\.vim", "$userPath\.vim\backupdir", "$userPath\.vim\swapdir", "$userPath\.vim\undodir", "$userPath\.gnupg", "$userPath\scoop\buckets", "$userPath\AppData\Roaming\pypoetry","$userPath\AppData\Local\pdm\pdm")
+        $Array = (
+            "$userPath\dotfilesbackup",
+            "$userPath\pip",
+            "$userPath\.m2",
+            "$userPath\.gradle",
+            "$userPath\.gradle",
+            "$userPath\.cargo",
+            "$userPath\.vim",
+            "$userPath\.vim\backupdir",
+            "$userPath\.vim\swapdir",
+            "$userPath\.vim\undodir",
+            "$userPath\.gnupg",
+            "$userPath\scoop\buckets",
+            "$userPath\AppData\Roaming\pypoetry",
+            "$userPath\AppData\Local\pdm\pdm",
+            "$userPath\scoop\apps\thunderbird-esr\current\profiles",
+            "$userPath\scoop\apps\thunderbird-esr\current\distribution",
+            "$userPath\scoop\persist\firefox\profiles",
+            "$userPath\scoop\persist\firefox\distribution"
+        )
         foreach ($folder in $Array) {
             $T_F = (Test-Path -Path ${folder})
             if (!$T_F) {
@@ -19,7 +38,17 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\pip\pip.ini", "$userPath\.m2\settings.xml", "$userPath\.gradle\init.gradle", "$userPath\.condarc", "$userPath\.cargo\config.toml", "$userPath\.vimrc", "$userPath\.gnupg\gpg.conf","$userPath\AppData\Roaming\pypoetry\config.toml","$userPath\AppData\Local\pdm\pdm\config.toml" )
+        $Array = (
+            "$userPath\pip\pip.ini",
+            "$userPath\.m2\settings.xml",
+            "$userPath\.gradle\init.gradle",
+            "$userPath\.condarc",
+            "$userPath\.cargo\config.toml",
+            "$userPath\.vimrc",
+            "$userPath\.gnupg\gpg.conf",
+            "$userPath\AppData\Roaming\pypoetry\config.toml",
+            "$userPath\AppData\Local\pdm\pdm\config.toml"
+        )
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
@@ -42,6 +71,7 @@ $script = {
         conf-vim
         conf-scoop-update
         conf-firefox
+        conf-thunderbird
         conf-pdm
         conf-poetry
     }
@@ -103,6 +133,15 @@ $script = {
     }
     function conf-firefox() {
         $folder = "$userPath\scoop\persist\firefox"
+        New-Item -Path "$folder\profile\user.js" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\firefox.user.js"
+        New-Item -Path "$folder\distribution\policies.json" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\firefox.policies.json"
+    }
+    function conf-thunderbird() {
+        $folder = "$userPath\scoop\apps\thunderbird-esr\current"
         New-Item -Path "$folder\profile\user.js" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\firefox.user.js"
