@@ -45,7 +45,7 @@
                     "foreground": "lightYellow",
                     "style": "plain",
                     "type": "path",
-                    "template": "{{ .Path }} "
+                    "template": "{{ .PWD }} "
                 },
                 {
                     "foreground": "white",
