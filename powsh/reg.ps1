@@ -70,7 +70,6 @@ $script = {
           -Name "DisableSearchBoxSuggestions" `
           -Value 1
     }
-    }
 
     function main {
         HideDesktopIcons
