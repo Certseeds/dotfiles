@@ -80,5 +80,7 @@
             xmlUrl="https://vitonsky.net/rss.xml" htmlUrl="https://vitonsky.net" />
         <outline text="the jsomers.net blog" title="the jsomers.net blog" type="rss"
             xmlUrl="http://jsomers.net/blog/feed" htmlUrl="https://jsomers.net/blog" />
+        <outline text="Posts on Max Woolf&#39;s Blog" title="Posts on Max Woolf&#39;s Blog" type="rss" 
+            xmlUrl="https://minimaxir.com/post/index.xml" htmlUrl="https://minimaxir.com/post/"/>
     </body>
 </opml>
