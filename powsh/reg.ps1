@@ -82,11 +82,29 @@ $script = {
       /d 1 `
       /f
   }
+  function disableEvilRecall() {
+    # 创建注册表项
+    reg.exe add `
+      "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" `
+      /f
+    # 设置属性
+    reg.exe add `
+      "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI\" `
+      /v "AllowRecallEnablement" `
+      /t REG_DWORD `
+      /d 0 `
+      /f
+    Disable-WindowsOptionalFeature `
+      -Online `
+      -FeatureName 'Recall' `
+      -Remove
+  }
   function main {
     HideDesktopIcons
     RemoveImageLibrary
     MsEdge
     disableNetworkSearch
+    disableEvilRecall
   }
 
   main
