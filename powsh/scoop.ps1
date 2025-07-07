@@ -130,6 +130,11 @@ $script = {
     function rustupsetup {
         rustup default stable
     }
+    
+    function hold {
+        scoop hold oh-my-posh
+    }
+
     #Entry point
     main
 }
