@@ -1,9 +1,11 @@
 {
     "policies": {
-        "DisableAccounts": true,
-        "DisableAppUpdate": true,
         "DisablePocket": true,
+        "DisableAccounts": true,
+        "DisableTelemetry": true,
+        "DisableAppUpdate": true,
         "DisableProfileRefresh": true,
+        "DontCheckDefaultBrowser": true,
         "DisableSetDesktopBackground": true
     }
 }
