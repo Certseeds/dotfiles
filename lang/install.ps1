@@ -47,7 +47,8 @@ $script = {
             "$userPath\.vimrc",
             "$userPath\.gnupg\gpg.conf",
             "$userPath\AppData\Roaming\pypoetry\config.toml",
-            "$userPath\AppData\Local\pdm\pdm\config.toml"
+            "$userPath\AppData\Local\pdm\pdm\config.toml",
+            "$userPath\.npmrc"
         )
         foreach ($file in $Array) {
             Write-Output ${file}
@@ -74,6 +75,7 @@ $script = {
         conf-thunderbird
         conf-pdm
         conf-poetry
+        conf-npmrc
     }
     function conf-gpg() {
         $folder = "$userPath\.gnupg"
@@ -161,6 +163,12 @@ $script = {
         New-Item -Path "$folder\config.toml" `
             -ItemType SymbolicLink `
             -Value "$userPath\dotfiles\lang\poetry.config.toml"
+    }
+    function conf-npmrc() {
+        $folder = "$userPath"
+        New-Item -Path "$folder\.npmrc" `
+            -ItemType SymbolicLink `
+            -Value "$userPath\dotfiles\lang\.npmrc"
     }
     # check by `poetry config --list`
     function main {

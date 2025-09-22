@@ -19,7 +19,7 @@ files=("${HOME}/.condarc" "${HOME}/.cargo/config.toml" "/etc/docker/deamon.json"
     "${HOME}/.gradle/init.gradle" "${HOME}/.pip/pip.conf" "${HOME}/.m2/settings.xml"
     "${HOME}/.vimrc" "/etc/nginx/nginx.conf" "${HOME}/.gnupg/gpg.conf"
     "${HOME}/.gnupg/gpg-agent.conf" "${HOME}/.config/pypoetry/config.toml"
-    "${HOME}/.config/pdm/config.toml"
+    "${HOME}/.config/pdm/config.toml" "${HOME}/.npmrc"
     )
 for item in "${files[@]}"; do
     echo "${item}"
@@ -42,6 +42,8 @@ sudo ln -snf "$(pwd)"/gpg.conf "${HOME}/.gnupg/gpg.conf"
 sudo ln -snf "$(pwd)"/gpg.agent.conf "${HOME}/.gnupg/gpg-agent.conf"
 sudo ln -snf "$(pwd)"/poetry.config.toml "${HOME}/.config/pypoetry/config.toml"
 sudo ln -snf "$(pwd)"/pdm.config.toml "${HOME}/.config/pdm/config.toml"
+sudo ln -snf "$(pwd)"/.npmrc "${HOME}/.npmrc"
+
 # sudo cp "$(pwd)"/nginx.conf "/etc/nginx/nginx.conf"
 
 sudo chown -R "${USER}":"${USER}" "${HOME}/.condarc"
@@ -55,6 +57,7 @@ sudo chown -R "${USER}":"${USER}" "${HOME}/.gnupg/gpg.conf"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.gnupg/gpg-agent.conf"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.config/pypoetry/config.toml"
 sudo chown -R "${USER}":"${USER}" "${HOME}/.config/pdm/config.toml"
+sudo chown -R "${USER}":"${USER}" "${HOME}/.npmrc"
 # sudo chown -R "${USER}":"${USER}" "/etc/nginx/nginx.conf"
 
 unset NOW_TIME
