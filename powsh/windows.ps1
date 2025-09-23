@@ -20,7 +20,7 @@ $script = {
     }
     function backup_exists_file() {
         mkdir "${userPath}\dotfilesbackup\${time}"
-        $Array = ("$userPath\Documents\WindowsPowerShell\Microsoft.Powershell_profile.ps1", "$userPath\Documents\WindowsPowerShell\Profile.ps1", "${env:PSHOME}\profile.ps1", "$userPath\Documents\PowerShell\Microsoft.Powershell_profile.ps1", "$userPath\Documents\PowerShell\Profile.ps1")
+        $Array = ("$userPath\Documents\WindowsPowerShell\Microsoft.Powershell_profile.ps1", "$userPath\Documents\WindowsPowerShell\Profile.ps1", "${PSHOME}\profile.ps1", "$userPath\Documents\PowerShell\Microsoft.Powershell_profile.ps1", "$userPath\Documents\PowerShell\Profile.ps1")
         foreach ($file in $Array) {
             Write-Output ${file}
             $T_F = (Test-Path -Path ${file} -PathType Leaf)
