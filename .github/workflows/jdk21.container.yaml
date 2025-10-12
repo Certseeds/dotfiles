@@ -1,4 +1,4 @@
-name: termurin8-maven-cn
+name: termurin21-maven-cn
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -7,7 +7,7 @@ name: termurin8-maven-cn
 
 on:
   schedule:
-    - cron: '17 15 * * *'
+    - cron: '17 15 * * 1'
   push:
     branches: [ "master" ]
     # Publish semver tags as releases.
@@ -18,7 +18,7 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
-  IMAGE_NAME: certseeds/termurin8-maven-cn
+  IMAGE_NAME: certseeds/termurin21-maven-cn
 
 
 jobs:
@@ -69,7 +69,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./container/jdk
-          file: ./container/jdk/jdk8.dockerfile
+          file: ./container/jdk/jdk21.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
           labels: ${{ steps.meta.outputs.labels }}

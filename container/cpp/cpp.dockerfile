@@ -8,9 +8,6 @@ LABEL org.opencontainers.image.authors="Certseeds <51754303+Certseeds@users.nore
 RUN export DEBIAN_FRONTEND=noninteractive \
   && yes | apt-get update \
   && yes | apt-get upgrade \
-  && yes | apt-get install build-essential \
-  && yes | apt-get install cmake \
-  && yes | apt-get install gdb \
-  && yes | apt-get install make \
-  && yes | apt-get install ccache
+  && yes | apt-get install build-essential cmake gdb make ccache \
+  && rm -rf /var/lib/apt/lists/*
 
