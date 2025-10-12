@@ -1,16 +1,27 @@
 # Place it in ~
 
+## dependencies
+
+``` powershell
+scoop install uv
+```
+
+``` bash
+sudo apt-get install pipx
+pipx install uv
+```
+
 ## run platform scripts
 
-in ~/dotfiles
+in each subfodler
 
-for linux:
+``` powershell
+./install.sh
+```
 
-`script/linux.sh`
-
-for windows:
-
-`script/windows.ps1`
+``` bash
+bash ./install.sh
+```
 
 ## license
 
