@@ -5,8 +5,8 @@ $script = {
         uvx --version
         sudo uvx dotbot `
             --verbose `
-            --base-directory "$userPath\dotfiles\lang" `
-            --config install.win.yaml
+            --base-directory "$userPath\dotfiles\git" `
+            --config install.conf.yaml
     }
     main
 }

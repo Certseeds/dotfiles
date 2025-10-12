@@ -1,0 +1,72 @@
+- create:
+    - ~/pip
+    - ~/.m2
+    - ~/.gradle
+    - ~/.cargo
+    - ~/.vim
+    - ~/.vim/backupdir
+    - ~/.vim/swapdir
+    - ~/.vim/undodir
+    - ~/.gnupg
+    - ~/scoop/buckets
+    - ~/AppData/Roaming/pypoetry
+    - ~/AppData/Local/pdm/pdm
+    - ~/scoop/persist/thunderbird/profiles
+    - ~/scoop/persist/thunderbird/distribution
+    - ~/scoop/persist/firefox/profiles
+    - ~/scoop/persist/firefox/distribution
+
+- link:
+    ~/.gnupg/gpg.conf:
+      path: gpg.conf
+      relink: true
+    ~/.gnupg/gpg-agent.conf:
+      path: gpg.agent.conf
+      relink: true
+    ~/.pip/pip.conf:
+      path: pip.conf
+      relink: true
+    ~/.m2/settings.xml:
+      path: settings.xml
+      relink: true
+    ~/.gradle/init.gradle:
+      path: init.gradle
+      relink: true
+    ~/.condarc:
+      path: .condarc
+      relink: true
+    ~/.cargo/config.toml:
+      path: cargo.config.toml
+      relink: true
+    ~/.vimrc:
+      path: .vimrc
+      relink: true
+    ~/scoop/buckets/scoop.sh:
+      path: scoop.sh
+      relink: true
+    ~/scoop/persist/firefox/profile/user.js:
+      path: firefox.user.js
+      relink: true
+    ~/scoop/persist/firefox/distribution/policies.json:
+      path: firefox.policies.json
+      relink: true
+    ~/scoop/persist/thunderbird/profile/user.js:
+      path: firefox.user.js
+      relink: true
+    ~/scoop/persist/thunderbird/distribution/policies.json:
+      path: firefox.policies.json
+      relink: true
+    ~/AppData/Local/pdm/pdm/config.toml:
+      path: pdm.config.toml
+      relink: true
+    ~/AppData/Roaming/pypoetry/config.toml:
+      path: poetry.config.toml
+      relink: true
+    ~/.npmrc:
+      path: .npmrc
+      relink: true
+
+- shell:
+    - command: echo "✅ All dotfiles linked and system configs set."
+      description: "Confirming setup completion"
+      stdout: true

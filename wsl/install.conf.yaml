@@ -1,0 +1,9 @@
+- link:
+    ~/.wslconfig:
+      path: .wslconfig
+      relink: true
+
+- shell:
+    - command: echo "✅ .wslconfig done"
+      description: "Confirming setup completion"
+      stdout: true

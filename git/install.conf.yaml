@@ -1,0 +1,15 @@
+- create:
+    - '~/.ssh'
+
+- link:
+    ~/.gitconfig:
+      path: .gitconfig
+      relink: true
+    ~/.ssh/config:
+      path: .ssh/config
+      relink: true
+
+- shell:
+  - command: echo "✅ Git and SSH configurations linked."
+    description: "Confirming setup completion"
+    stdout: true

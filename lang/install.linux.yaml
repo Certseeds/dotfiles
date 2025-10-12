@@ -1,0 +1,52 @@
+- create:
+    - ~/.pip
+    - ~/.m2
+    - ~/.gradle
+    - ~/.cargo
+    - ~/.vim
+    - ~/.vim/backupdir
+    - ~/.vim/swapdir
+    - ~/.vim/undodir
+    - ~/.gnupg
+    - ~/.config/pypoetry
+    - ~/.config/pdm
+
+- link:
+    ~/.condarc:
+      path: .condarc
+      relink: true
+    ~/.cargo/config.toml:
+      path: cargo.config.toml
+      relink: true
+    ~/.gradle/init.gradle:
+      path: init.gradle
+      relink: true
+    ~/.pip/pip.conf:
+      path: pip.conf
+      relink: true
+    ~/.m2/settings.xml:
+      path: settings.xml
+      relink: true
+    ~/.vimrc:
+      path: .vimrc
+      relink: true
+    ~/.gnupg/gpg.conf:
+      path: gpg.conf
+      relink: true
+    ~/.gnupg/gpg-agent.conf:
+      path: gpg.agent.conf
+      relink: true
+    ~/.config/pypoetry/config.toml:
+      path: poetry.config.toml
+      relink: true
+    ~/.config/pdm/config.toml:
+      path: pdm.config.toml
+      relink: true
+    ~/.npmrc:
+      path: .npmrc
+      relink: true
+
+- shell:
+    - command: echo "✅ All dotfiles linked and system configs set."
+      description: "Confirming setup completion"
+      stdout: true

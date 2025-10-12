@@ -1,0 +1,9 @@
+- link:
+    ~/.zshrc:
+      path: .zshrc
+      relink: true
+
+- shell:
+    - command: echo "✅ .zshrc done"
+      description: "Confirming setup completion"
+      stdout: true

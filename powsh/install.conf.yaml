@@ -1,0 +1,22 @@
+- create:
+    - ~/Documents/WindowsPowerShell
+    - ~/Documents/PowerShell
+
+- link:
+    ~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1:
+      path: profile.ps1
+      relink: true
+    ~/Documents/WindowsPowerShell/Profile.ps1:
+      path: profile.ps1
+      relink: true
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1:
+      path: profile.ps1
+      relink: true
+    ~/Documents/PowerShell/Profile.ps1:
+      path: profile.ps1
+      relink: true
+
+- shell:
+    - command: echo "✅ All dotfiles linked and system configs set."
+      description: "Confirming setup completion"
+      stdout: true
