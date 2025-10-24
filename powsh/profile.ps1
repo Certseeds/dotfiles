@@ -1,3 +1,6 @@
+if ($global:__DotfilesProfileInitialized) { return }
+$global:__DotfilesProfileInitialized = $true
+
 Import-Module PSReadLine # scoop install PSReadLine
 Import-Module posh-git # scoop install posh-git
 
@@ -10,7 +13,8 @@ Set-PSReadlineKeyHandler -Key "Ctrl+z" -Function Undo # 自动补全
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackWard # 自动补全
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward # 自动补全
 
-Invoke-Expression (oh-my-posh --init --shell pwsh --config ~/dotfiles/powsh/.poshtheme.json)
+oh-my-posh --init --shell pwsh --config ~/dotfiles/powsh/.poshtheme.json | Invoke-Expression
+
 $Env:TZ = 'UTC'
 # dont forget to set the windows-terminal's default font to SauceCodePro NF
 

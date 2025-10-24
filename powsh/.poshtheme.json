@@ -55,7 +55,7 @@
                 },
                 {
                     "properties": {
-                        "fetch_status": true
+                        "fetch_status": false
                     },
                     "style": "plain",
                     "type": "git",
@@ -81,7 +81,7 @@
                 },
                 {
                     "properties": {
-                        "fetch_status": true
+                        "fetch_status": false
                     },
                     "foreground": "red",
                     "style": "plain",
