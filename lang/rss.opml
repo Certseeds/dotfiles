@@ -82,5 +82,7 @@
             xmlUrl="http://jsomers.net/blog/feed" htmlUrl="https://jsomers.net/blog" />
         <outline text="Posts on Max Woolf&#39;s Blog" title="Posts on Max Woolf&#39;s Blog" type="rss" 
             xmlUrl="https://minimaxir.com/post/index.xml" htmlUrl="https://minimaxir.com/post/"/>
+        <outline text="新的原野" title="新的原野" type="rss" 
+            xmlUrl="https://sinyalee.com/blog/?feed=rss2" htmlUrl="https://sinyalee.com/blog" entryContent="3"/>
     </body>
 </opml>
