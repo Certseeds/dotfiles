@@ -69,7 +69,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./container/jdk
-          file: ./container/jdk/jdk21.dockerfile
+          file: ./container/jdk/jdk21.containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
           labels: ${{ steps.meta.outputs.labels }}
