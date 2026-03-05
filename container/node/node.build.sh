@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 set -euox pipefail
 main() {
-    if [[ ! -f "sshd_config.conf" ]]; then
-        exit 0
-    fi
     local SOURCE="ghcr.io"
     local USERNAME="certseeds"
-    local IMAGE_NAME="sshable"
+    local IMAGE_NAME="node"
     podman build \
-        -f "$(pwd)"/sshable/ssh.containerfile \
+        -f "$(pwd)"/node/node.containerfile \
         -t "${SOURCE}"/"${USERNAME}"/"${IMAGE_NAME}" \
+        --build-arg HTTP_PROXY="" \
+        --build-arg HTTPS_PROXY="" \
         .
 }
 main

@@ -7,7 +7,7 @@ name: termurin21-maven-cn
 
 on:
   schedule:
-    - cron: '17 15 * * 1'
+    - cron: '17 15 1 * *'
   push:
     branches: [ "master" ]
     # Publish semver tags as releases.

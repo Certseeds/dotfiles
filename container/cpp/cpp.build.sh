@@ -5,7 +5,7 @@ main() {
     local USERNAME="certseeds"
     local IMAGE_NAME="cppdev"
     podman build \
-        -f "$(pwd)"/cpp.dockerfile \
+        -f "$(pwd)"/cpp.containerfile \
         -t "${SOURCE}"/"${USERNAME}"/"${IMAGE_NAME}" \
         .
 }

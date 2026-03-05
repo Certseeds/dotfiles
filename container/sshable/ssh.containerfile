@@ -15,8 +15,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list.d/u
 RUN export DEBIAN_FRONTEND=noninteractive \
   && yes | apt-get update \
   && yes | apt-get upgrade \
-  && yes | apt-get install apt-utils openssh-client openssh-server \
-  && rm -rf /var/lib/apt/lists/*
+  && yes | apt-get install apt-utils openssh-client openssh-server
 
 COPY sshd_config.conf /etc/ssh/sshd_config
 
