@@ -28,6 +28,11 @@ RUN . "${NVM_DIR}/nvm.sh" \
   && npm install -g pnpm \
   && pnpm config set registry https://registry.npmmirror.com
 
-ENV SHELL="/bin/bash"
+# set default environment variables globally rather than modifying the shell profile
+ENV SHELL="/bin/bash" \
+    ANTHROPIC_BASE_URL="http://127.0.0.1:3456" \
+    ANTHROPIC_API_KEY="any-string-is-ok" \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
 
 ENTRYPOINT ["/bin/bash"]
