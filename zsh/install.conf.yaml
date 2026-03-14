@@ -2,8 +2,11 @@
     ~/.zshrc:
       path: .zshrc
       relink: true
+    ~/.zshenv:
+      path: .zshenv
+      relink: true
 
 - shell:
-    - command: echo "✅ .zshrc done"
+    - command: echo "✅ .zshenv .zshrc done"
       description: "Confirming setup completion"
       stdout: true
