@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 import hashlib
 import base64
 import argparse
 import pathlib
+import random
 from typing import List
 
 
@@ -177,7 +180,8 @@ def generate_content(name: str) -> str:
     3. name | sha1sum | base64
     4. name | sha256sum | md5sum
     """
-    name_bytes = name.encode("utf-8")
+
+    results: List[str] = []
 
     # 1. echo "${line}" | base64 | md5sum
     # Note: base64 in shell adds a newline by default, but we should match the intent.
@@ -185,24 +189,33 @@ def generate_content(name: str) -> str:
     line_with_newline = (name + "\n").encode("utf-8")
     b64_1 = base64.b64encode(line_with_newline)
     md5_1 = hashlib.md5(b64_1).hexdigest()
+    results.append(md5_1)
 
     # 2. echo "${line}" | md5sum | base64
     # md5sum output in shell is usually "hash  -"
     md5_2_raw = hashlib.md5(line_with_newline).hexdigest()
     md5_2_str = f"{md5_2_raw}  -\n".encode("utf-8")
     b64_2 = base64.b64encode(md5_2_str).decode("utf-8")
+    results.append(b64_2)
 
     # 3. echo "${line}" | sha1sum | base64
     sha1_3_raw = hashlib.sha1(line_with_newline).hexdigest()
     sha1_3_str = f"{sha1_3_raw}  -\n".encode("utf-8")
     b64_3 = base64.b64encode(sha1_3_str).decode("utf-8")
+    results.append(b64_3)
 
     # 4. echo "${line}" | sha256sum | md5sum
     sha256_4_raw = hashlib.sha256(line_with_newline).hexdigest()
     sha256_4_str = f"{sha256_4_raw}  -\n".encode("utf-8")
     md5_4 = hashlib.md5(sha256_4_str).hexdigest()
 
-    return f"{md5_1}\n{b64_2}\n{b64_3}\n{md5_4}\n"
+    results.append(md5_4)
+
+    # random shuf results
+    
+    random.shuffle(results)
+    # and result results.join("\n")
+    return "\n".join(results) + "\n"
 
 
 def main() -> None:
