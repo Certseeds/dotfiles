@@ -11,9 +11,9 @@
     - ~/scoop/buckets
     - ~/AppData/Roaming/pypoetry
     - ~/AppData/Local/pdm/pdm
-    - ~/scoop/persist/thunderbird/profiles
-    - ~/scoop/persist/thunderbird/distribution
-    - ~/scoop/persist/firefox/profiles
+    - ~/scoop/persist/thunderbird-esr/profile
+    - ~/scoop/persist/thunderbird-esr/distribution
+    - ~/scoop/persist/firefox/profile
     - ~/scoop/persist/firefox/distribution
 
 - link:
@@ -50,10 +50,10 @@
     ~/scoop/persist/firefox/distribution/policies.json:
       path: firefox.policies.json
       relink: true
-    ~/scoop/persist/thunderbird/profile/user.js:
+    ~/scoop/persist/thunderbird-esr/profile/user.js:
       path: thunderbird.user.js
       relink: true
-    ~/scoop/persist/thunderbird/distribution/policies.json:
+    ~/scoop/persist/thunderbird-esr/distribution/policies.json:
       path: firefox.policies.json
       relink: true
     ~/AppData/Local/pdm/pdm/config.toml:
