@@ -51,7 +51,7 @@
       path: firefox.policies.json
       relink: true
     ~/scoop/persist/thunderbird/profile/user.js:
-      path: firefox.user.js
+      path: thunderbird.user.js
       relink: true
     ~/scoop/persist/thunderbird/distribution/policies.json:
       path: firefox.policies.json
