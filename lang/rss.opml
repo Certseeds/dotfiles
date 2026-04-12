@@ -1,88 +1,178 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
         <title>Feed Subscriptions</title>
     </head>
     <body>
-        <outline text="阮一峰的网络日志" title="阮一峰的网络日志" type="rss"
-            xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
-            htmlUrl="http://www.ruanyifeng.com/blog/" />
-        <outline text="certseeds-blog" title="certseeds-blog" type="rss"
-            xmlUrl="https://blog.certseeds.com/index.xml" htmlUrl="https://blog.certseeds.com/" />
-        <outline text="UlyC" title="UlyC" type="rss"
-            xmlUrl="https://ulyc.github.io//feed" htmlUrl="https://UlyC.github.io/" />
-        <outline text="美团技术团队" title="美团技术团队" type="rss"
-            xmlUrl="https://tech.meituan.com/feed/" htmlUrl="https://tech.meituan.com/feed/" />
-        <outline text="The Atuin Blog" title="The Atuin Blog" type="rss"
-            xmlUrl="https://blog.atuin.sh/rss/" htmlUrl="https://blog.atuin.sh/" />
-        <outline text="Microsoft AI Blogs » Feed" title="Microsoft AI Blogs » Feed" type="rss"
-            xmlUrl="https://www.microsoft.com/en-us/ai/blog/feed/"
-            htmlUrl="https://www.microsoft.com/en-us/ai/blog/" />
-        <outline text="Latest 10 blog posts (atom)" title="Latest 10 blog posts (atom)" type="rss"
-            xmlUrl="https://yongyuan.name/blog/feed.xml" htmlUrl="https://yongyuan.name" />
-        <outline text="Blog RSS" title="Blog RSS" type="rss"
-            xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
-        <outline text="WebP Cloud Services Blog" title="WebP Cloud Services Blog" type="rss"
-            xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
-        <outline text="硬盘在歌唱" title="硬盘在歌唱" type="rss"
-            xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
-        <outline text="persistent.info - Posts Feed" title="persistent.info - Posts Feed" type="rss"
-            xmlUrl="https://blog.persistent.info/feeds/posts/default"
-            htmlUrl="https://blog.persistent.info/" />
-        <outline text="The Economist" title="The Economist" type="rss"
-            xmlUrl="https://feedx.run/rss/economist.xml" htmlUrl="https://www.economist.com" />
-        <outline text="Atom" title="Atom" type="rss"
-            xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="https://blog.codingnow.com/" />
-        <outline text="Christian Hascheks blog" title="Christian Hascheks blog" type="rss"
-            xmlUrl="https://blog.haschek.at/rss.xml" htmlUrl="https://blog.haschek.at" />
-        <outline text="NPR Topics: News" title="NPR Topics: News" type="rss"
-            xmlUrl="https://feeds.npr.org/1001/rss.xml"
-            htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1001" />
-        <outline text="NPR Topics: Investigations" title="NPR Topics: Investigations" type="rss"
-            xmlUrl="https://feeds.npr.org/1150/rss.xml"
-            htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1150" />
-        <outline text="Blog | Sam Curry" title="Blog | Sam Curry" type="rss"
-            xmlUrl="https://samcurry.net/feed.rss" htmlUrl="https://samcurry.net" />
-        <outline text="Thunderbird Release Notes" title="Thunderbird Release Notes" type="rss"
-            xmlUrl="https://www.thunderbird.net/en-US/thunderbird/releases/atom.xml"
-            htmlUrl="https://www.thunderbird.net//en-US/thunderbird/releases" />
-        <outline text="DuBlog" title="DuBlog" type="rss"
-            xmlUrl="https://dublog.net/index.xml" htmlUrl="https://dublog.net/" />
-        <outline text="Rubenerd" title="Rubenerd" type="rss"
-            xmlUrl="https://rubenerd.com/feed/" htmlUrl="https://rubenerd.com/" />
-        <outline text="Gokberk Yaltirakli" title="Gokberk Yaltirakli" type="rss"
-            xmlUrl="https://www.gkbrk.com/feed.xml" htmlUrl="https://www.gkbrk.com/" />
-        <outline text="Jonas Hietala" title="Jonas Hietala" type="rss"
-            xmlUrl="https://www.jonashietala.se/feed.xml" htmlUrl="https://www.jonashietala.se/" />
-        <outline text="Two-Bit History" title="Two-Bit History" type="rss"
-            xmlUrl="https://twobithistory.org/feed.xml" htmlUrl="https://twobithistory.org/" />
-        <outline title="LowTech" text="LowTech">
-            <outline text="Obsolete-Technology" title="Obsolete-Technology" type="rss"
-                xmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/index.xml"
-                htmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/" />
-            <outline text="Low-Tech-Solution" title="Low-Tech-Solution" type="rss"
-                xmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/index.xml"
-                htmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/" />
-            <outline text="High-Tech-Problem" title="HighTechProblem" type="rss"
-                xmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/index.xml"
-                htmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/" />
-            <outline text="Low-Tech-Main" title="Low-Tech-outside" type="rss"
-                xmlUrl="https://solar.lowtechmagazine.com/index.xml"
-                htmlUrl="https://solar.lowtechmagazine.com/" />
+        <outline title="All Things Distributed">
+            <outline type="rss" title="All Things Distributed" text="All Things Distributed"
+                version="RSS"
+                xmlUrl="https://www.allthingsdistributed.com/atom.xml"
+                htmlUrl="https://www.allthingsdistributed.com/" />
         </outline>
-        <outline text="Loris Cro&#39;s Personal Website" title="Loris Cro&#39;s Personal Website"
-            type="rss" xmlUrl="https://kristoff.it/index.xml" htmlUrl="https://kristoff.it/" />
-        <outline text="Nick Botticelli" title="Nick Botticelli" type="rss"
-            xmlUrl="https://nickb.website/feed.xml" htmlUrl="https://nickb.website/" />
-        <outline text="Nekonull&#39;s Garden" title="Nekonull&#39;s Garden" type="rss"
-            xmlUrl="https://nekonull.me/index.xml" htmlUrl="https://nekonull.me/" />
-        <outline text="Blog about computers" title="Blog about computers" type="rss"
-            xmlUrl="https://vitonsky.net/rss.xml" htmlUrl="https://vitonsky.net" />
-        <outline text="the jsomers.net blog" title="the jsomers.net blog" type="rss"
-            xmlUrl="http://jsomers.net/blog/feed" htmlUrl="https://jsomers.net/blog" />
-        <outline text="Posts on Max Woolf&#39;s Blog" title="Posts on Max Woolf&#39;s Blog" type="rss" 
-            xmlUrl="https://minimaxir.com/post/index.xml" htmlUrl="https://minimaxir.com/post/"/>
-        <outline text="新的原野" title="新的原野" type="rss" 
-            xmlUrl="https://sinyalee.com/blog/?feed=rss2" htmlUrl="https://sinyalee.com/blog" entryContent="3"/>
+        <outline title="Blog Sam Curry">
+            <outline type="rss" title="Blog | Sam Curry" text="Blog | Sam Curry" version="RSS"
+                xmlUrl="https://samcurry.net/feed.rss" htmlUrl="https://samcurry.net" />
+        </outline>
+        <outline title="Christian Hascheks blog">
+            <outline type="rss" title="Christian Hascheks blog" text="Christian Hascheks blog"
+                version="RSS"
+                xmlUrl="https://blog.haschek.at/rss.xml" htmlUrl="https://blog.haschek.at" />
+        </outline>
+        <outline title="DuBlog">
+            <outline type="rss" title="DuBlog" text="DuBlog" version="RSS"
+                xmlUrl="https://dublog.net/index.xml" htmlUrl="https://dublog.net/" />
+        </outline>
+        <outline title="Jonas Hietala">
+            <outline type="rss" title="Jonas Hietala" text="Jonas Hietala" version="RSS"
+                xmlUrl="https://www.jonashietala.se/feed.xml"
+                htmlUrl="https://www.jonashietala.se/feed.xml" />
+        </outline>
+        <outline title="Loris Cro's Personal Website">
+            <outline type="rss" title="Loris Cro's Personal Website"
+                text="Loris Cro's Personal Website"
+                version="RSS"
+                xmlUrl="https://kristoff.it/index.xml" htmlUrl="https://kristoff.it/" />
+        </outline>
+        <outline title="low-tech">
+            <outline title="LOW←TECH MAGAZINE English">
+                <outline type="rss" title="LOW←TECH MAGAZINE English"
+                    text="LOW←TECH MAGAZINE English"
+                    version="RSS"
+                    xmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/index.xml"
+                    htmlUrl="https://solar.lowtechmagazine.com/high-tech-problems/" />
+            </outline>
+            <outline title="LOW←TECH MAGAZINE English-2">
+                <outline type="rss" title="LOW←TECH MAGAZINE English"
+                    text="LOW←TECH MAGAZINE English"
+                    version="RSS"
+                    xmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/index.xml"
+                    htmlUrl="https://solar.lowtechmagazine.com/low-tech-solutions/" />
+            </outline>
+            <outline title="LOW←TECH MAGAZINE English-3">
+                <outline type="rss" title="LOW←TECH MAGAZINE English"
+                    text="LOW←TECH MAGAZINE English"
+                    version="RSS"
+                    xmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/index.xml"
+                    htmlUrl="https://solar.lowtechmagazine.com/obsolete-technology/" />
+            </outline>
+            <outline title="LOW←TECH MAGAZINE English-4">
+                <outline type="rss" title="LOW←TECH MAGAZINE English"
+                    text="LOW←TECH MAGAZINE English"
+                    version="RSS"
+                    xmlUrl="https://solar.lowtechmagazine.com/index.xml"
+                    htmlUrl="https://solar.lowtechmagazine.com/" />
+            </outline>
+        </outline>
+        <outline title="Microsoft AI Blogs">
+            <outline type="rss" title="Microsoft AI Blogs" text="Microsoft AI Blogs" version="RSS"
+                xmlUrl="https://www.microsoft.com/en-us/ai/blog/feed/"
+                htmlUrl="https://www.microsoft.com/en-us/ai/blog/" />
+        </outline>
+        <outline title="nekonull">
+            <outline title="Nekonull's Garden">
+                <outline type="rss" title="Nekonull's Garden" text="Nekonull's Garden" version="RSS"
+                    xmlUrl="https://nekonull.me/index.xml" htmlUrl="https://nekonull.me/" />
+            </outline>
+            <outline title="TIL on Nekonull's Garden">
+                <outline type="rss" title="TIL on Nekonull's Garden" text="TIL on Nekonull's Garden"
+                    version="RSS"
+                    xmlUrl="https://nekonull.me/til/index.xml" htmlUrl="https://nekonull.me/til/" />
+            </outline>
+        </outline>
+        <outline title="Nick Botticelli">
+            <outline type="rss" title="Nick Botticelli" text="Nick Botticelli" version="RSS"
+                xmlUrl="https://nickb.website/feed.xml" htmlUrl="https://nickb.website/feed.xml" />
+        </outline>
+        <outline title="npr-topics">
+            <outline title="NPR Topics Investigations">
+                <outline type="rss" title="NPR Topics: Investigations"
+                    text="NPR Topics: Investigations"
+                    version="RSS"
+                    xmlUrl="https://feeds.npr.org/1150/rss.xml"
+                    htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1150" />
+            </outline>
+            <outline title="NPR Topics News">
+                <outline type="rss" title="NPR Topics: News" text="NPR Topics: News" version="RSS"
+                    xmlUrl="https://feeds.npr.org/1001/rss.xml"
+                    htmlUrl="https://www.npr.org/templates/story/story.php?storyId=1001" />
+            </outline>
+        </outline>
+        <outline title="Posts on Max Woolf's Blog">
+            <outline type="rss" title="Posts on Max Woolf's Blog" text="Posts on Max Woolf's Blog"
+                version="RSS"
+                xmlUrl="https://minimaxir.com/post/index.xml" htmlUrl="https://minimaxir.com/post/" />
+        </outline>
+        <outline title="Robert Vitonsky Software engineering insights">
+            <outline type="rss" title="Robert Vitonsky | Software engineering insights"
+                text="Robert Vitonsky | Software engineering insights" version="RSS"
+                xmlUrl="https://vitonsky.net/rss.xml" htmlUrl="https://vitonsky.net/" />
+        </outline>
+        <outline title="Rubenerd">
+            <outline type="rss" title="Rubenerd" text="Rubenerd" version="RSS"
+                xmlUrl="https://rubenerd.com/feed/" htmlUrl="https://www.rubenerd.au/" />
+        </outline>
+        <outline title="The Atuin Blog">
+            <outline type="rss" title="The Atuin Blog" text="The Atuin Blog" version="RSS"
+                xmlUrl="https://blog.atuin.sh/rss/" htmlUrl="https://blog.atuin.sh/" />
+        </outline>
+        <outline title="the jsomers.net blog">
+            <outline type="rss" title="the jsomers.net blog" text="the jsomers.net blog"
+                version="RSS"
+                xmlUrl="http://jsomers.net/blog/feed" htmlUrl="https://jsomers.net/blog" />
+        </outline>
+        <outline title="Thunderbird Release Notes">
+            <outline type="rss" title="Thunderbird Release Notes" text="Thunderbird Release Notes"
+                version="RSS"
+                xmlUrl="https://www.thunderbird.net/en-US/thunderbird/releases/atom.xml"
+                htmlUrl="https://www.thunderbird.net/thunderbird/releases/atom.xml" />
+        </outline>
+        <outline title="Two-Bit History">
+            <outline type="rss" title="Two-Bit History" text="Two-Bit History" version="RSS"
+                xmlUrl="https://twobithistory.org/feed.xml"
+                htmlUrl="https://twobithistory.org/feed.xml" />
+        </outline>
+        <outline title="UlyC">
+            <outline type="rss" title="UlyC" text="UlyC" version="RSS"
+                xmlUrl="https://ulyc.github.io/feed" htmlUrl="https://UlyC.github.io/" />
+        </outline>
+        <outline title="WebP Cloud Services Blog">
+            <outline type="rss" title="WebP Cloud Services Blog" text="WebP Cloud Services Blog"
+                version="RSS"
+                xmlUrl="https://blog.webp.se/index.xml" htmlUrl="https://blog.webp.se/" />
+        </outline>
+        <outline title="YongYuan's homepage">
+            <outline type="rss" title="YongYuan's homepage" text="YongYuan's homepage" version="RSS"
+                xmlUrl="https://yongyuan.name/blog/feed.xml" htmlUrl="https://yongyuan.name" />
+        </outline>
+        <outline title="云风的 BLOG">
+            <outline type="rss" title="云风的 BLOG" text="云风的 BLOG" version="RSS"
+                xmlUrl="https://blog.codingnow.com/atom.xml"
+                htmlUrl="https://blog.codingnow.com/atom.xml" />
+        </outline>
+        <outline title="依云's Blog">
+            <outline type="rss" title="依云's Blog" text="依云's Blog" version="RSS"
+                xmlUrl="https://blog.lilydjwg.me/posts.rss" htmlUrl="https://blog.lilydjwg.me/" />
+        </outline>
+        <outline title="新的原野">
+            <outline type="rss" title="新的原野" text="新的原野" version="RSS"
+                xmlUrl="https://sinyalee.com/blog/?feed=rss2" htmlUrl="https://sinyalee.com/blog" />
+        </outline>
+        <outline title="硬盘在歌唱">
+            <outline type="rss" title="硬盘在歌唱" text="硬盘在歌唱" version="RSS"
+                xmlUrl="https://disksing.com/index.xml" htmlUrl="http://disksing.com/" />
+        </outline>
+        <outline title="美团技术团队">
+            <outline type="rss" title="美团技术团队" text="美团技术团队" version="RSS"
+                xmlUrl="https://tech.meituan.com/feed/" htmlUrl="https://tech.meituan.com/feed/" />
+        </outline>
+        <outline title="阮一峰的网络日志">
+            <outline type="rss" title="阮一峰的网络日志" text="阮一峰的网络日志" version="RSS"
+                xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
+                htmlUrl="http://www.ruanyifeng.com/blog/" />
+        </outline>
+        <outline title="Certseeds Blog">
+            <outline type="rss" title="Certseeds Blog" text="Certseeds Blog" version="RSS"
+                xmlUrl="https://blog.certseeds.com/index.xml" htmlUrl="https://blog.certseeds.com/" />
+        </outline>
     </body>
 </opml>
