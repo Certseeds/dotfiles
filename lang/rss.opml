@@ -13,6 +13,10 @@
             <outline type="rss" title="Blog | Sam Curry" text="Blog | Sam Curry" version="RSS"
                 xmlUrl="https://samcurry.net/feed.rss" htmlUrl="https://samcurry.net" />
         </outline>
+        <outline title="Certseeds Blog">
+            <outline type="rss" title="Certseeds Blog" text="Certseeds Blog" version="RSS"
+                xmlUrl="https://blog.certseeds.com/index.xml" htmlUrl="https://blog.certseeds.com/" />
+        </outline>
         <outline title="Christian Hascheks blog">
             <outline type="rss" title="Christian Hascheks blog" text="Christian Hascheks blog"
                 version="RSS"
@@ -169,10 +173,6 @@
             <outline type="rss" title="阮一峰的网络日志" text="阮一峰的网络日志" version="RSS"
                 xmlUrl="https://www.ruanyifeng.com/blog/index.xml"
                 htmlUrl="http://www.ruanyifeng.com/blog/" />
-        </outline>
-        <outline title="Certseeds Blog">
-            <outline type="rss" title="Certseeds Blog" text="Certseeds Blog" version="RSS"
-                xmlUrl="https://blog.certseeds.com/index.xml" htmlUrl="https://blog.certseeds.com/" />
         </outline>
     </body>
 </opml>
