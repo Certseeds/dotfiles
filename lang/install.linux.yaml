@@ -10,6 +10,7 @@
     - ~/.gnupg
     - ~/.config/pypoetry
     - ~/.config/pdm
+    - ~/.config/uv
 
 - link:
     ~/.condarc:
@@ -41,6 +42,9 @@
       relink: true
     ~/.config/pdm/config.toml:
       path: pdm.config.toml
+      relink: true
+    ~/.config/uv/uv.toml:
+      path: uv.toml
       relink: true
     ~/.npmrc:
       path: .npmrc

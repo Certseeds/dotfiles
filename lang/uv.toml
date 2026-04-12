@@ -1,0 +1,19 @@
+# refer <https://docs.astral.sh/uv/configuration/files/>
+# Windows: ~/AppData/Roaming/uv/uv.toml
+# Linux:   ~/.config/uv/uv.toml
+
+[[index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+# for pytorch with specific cuda version, configure in pyproject.toml:
+# [[tool.uv.index]]
+# name = "pytorch-cu${cuversion}"
+# url = "https://mirrors.aliyun.com/pytorch-wheels/cu${cuversion}/"
+# format = "flat"
+# explicit = true
+#
+# [tool.uv.sources]
+# torch = { index = "pytorch-cu${cuversion}" }
+# torchvision = { index = "pytorch-cu${cuversion}" }
+## work with `uv add torch torchvision`

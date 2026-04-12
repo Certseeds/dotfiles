@@ -11,6 +11,7 @@
     - ~/scoop/buckets
     - ~/AppData/Roaming/pypoetry
     - ~/AppData/Local/pdm/pdm
+    - ~/AppData/Roaming/uv
     - ~/scoop/persist/thunderbird-esr/profile
     - ~/scoop/persist/thunderbird-esr/distribution
     - ~/scoop/persist/firefox/profile
@@ -61,6 +62,9 @@
       relink: true
     ~/AppData/Roaming/pypoetry/config.toml:
       path: poetry.config.toml
+      relink: true
+    ~/AppData/Roaming/uv/uv.toml:
+      path: uv.toml
       relink: true
     ~/.npmrc:
       path: .npmrc
