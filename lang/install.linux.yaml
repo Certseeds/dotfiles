@@ -51,6 +51,7 @@
       relink: true
     /etc/hosts:
       path: hosts.conf
+      force: true
       relink: true
 
 - shell:
