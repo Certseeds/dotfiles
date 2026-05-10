@@ -1,5 +1,5 @@
 - create:
-    - ~/pip
+    - ~/.pip
     - ~/.m2
     - ~/.gradle
     - ~/.cargo
@@ -46,7 +46,7 @@
       path: scoop.sh
       relink: true
     ~/scoop/persist/firefox/profile/user.js:
-      path: firefox.user.js
+      path: thunderbird.user.js
       relink: true
     ~/scoop/persist/firefox/distribution/policies.json:
       path: firefox.policies.json
@@ -68,6 +68,9 @@
       relink: true
     ~/.npmrc:
       path: .npmrc
+      relink: true
+    'C:\Windows\System32\drivers\etc\hosts':
+      path: hosts
       relink: true
 
 - shell:

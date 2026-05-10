@@ -49,6 +49,9 @@
     ~/.npmrc:
       path: .npmrc
       relink: true
+    /etc/hosts:
+      path: hosts.conf
+      relink: true
 
 - shell:
     - command: echo "✅ All dotfiles linked and system configs set."

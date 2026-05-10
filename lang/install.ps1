@@ -1,9 +1,10 @@
+# it should be run in powershell with admin privilege
 $script = {
     $userPath = "C:\Users\${env:USERNAME}"
     function main {
         uv --version
         uvx --version
-        sudo uvx dotbot `
+        uvx dotbot `
             --verbose `
             --base-directory "$userPath\dotfiles\lang" `
             --config install.win.yaml
