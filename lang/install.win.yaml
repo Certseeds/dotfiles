@@ -12,6 +12,7 @@
     - ~/AppData/Roaming/pypoetry
     - ~/AppData/Local/pdm/pdm
     - ~/AppData/Roaming/uv
+    - ~/AppData/Local/pnpm/config
     - ~/scoop/persist/thunderbird-esr/profile
     - ~/scoop/persist/thunderbird-esr/distribution
     - ~/scoop/persist/firefox/profile
@@ -66,11 +67,17 @@
     ~/AppData/Roaming/uv/uv.toml:
       path: uv.toml
       relink: true
+    ~/AppData/Local/pnpm/config/config.yaml:
+      path: pnpm.config.yaml
+      relink: true
+    ~/AppData/Local/pnpm/config/rc:
+      path: pnpm.config.rc
+      relink: true
     ~/.npmrc:
       path: .npmrc
       relink: true
     'C:\Windows\System32\drivers\etc\hosts':
-      path: hosts
+      path: hosts.conf
       relink: true
 
 - shell:

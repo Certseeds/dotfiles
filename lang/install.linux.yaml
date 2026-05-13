@@ -11,6 +11,7 @@
     - ~/.config/pypoetry
     - ~/.config/pdm
     - ~/.config/uv
+    - ~/.config/pnpm
 
 - link:
     ~/.condarc:
@@ -45,6 +46,12 @@
       relink: true
     ~/.config/uv/uv.toml:
       path: uv.toml
+      relink: true
+    ~/.config/pnpm/config.yaml:
+      path: pnpm.config.yaml
+      relink: true
+    ~/.config/pnpm/rc:
+      path: pnpm.config.rc
       relink: true
     ~/.npmrc:
       path: .npmrc
