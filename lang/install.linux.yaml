@@ -60,6 +60,9 @@
       path: hosts.conf
       force: true
       relink: true
+    ~/.claude/settings.json:
+      path: agents/cc.json
+      relink: true
 
 - shell:
     - command: echo "✅ All dotfiles linked and system configs set."
