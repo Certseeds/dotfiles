@@ -47,7 +47,7 @@
       path: scoop.sh
       relink: true
     ~/scoop/persist/firefox/profile/user.js:
-      path: thunderbird.user.js
+      path: firefox.user.js
       relink: true
     ~/scoop/persist/firefox/distribution/policies.json:
       path: firefox.policies.json
