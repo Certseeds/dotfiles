@@ -60,6 +60,7 @@ jobs:
           file: ./container/sshable/ssh.containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
+          provenance: false
 
   build-cpp-dev:
     env:
@@ -101,3 +102,4 @@ jobs:
           file: ./container/cpp/cpp.containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
+          provenance: false
