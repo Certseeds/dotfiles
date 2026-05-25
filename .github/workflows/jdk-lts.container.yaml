@@ -19,9 +19,6 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   IMAGE_NAME: certseeds/termurin25-maven-cn
-  OCI_SOURCE: https://github.com/Certseeds/dotfiles
-  OCI_LICENSES: MIT
-  OCI_DESCRIPTION: jdk25 with maven-cn source
 
 
 jobs:
@@ -52,46 +49,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Extract metadata (tags, labels) for Docker
-      # https://github.com/docker/metadata-action
-      - name: Extract Docker metadata
-        id: meta
-        uses: docker/metadata-action@v6
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          flavor: |
-            latest=false
-          tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=sha,enable={{is_default_branch}}
-          labels: |
-            org.opencontainers.image.source=${{ env.OCI_SOURCE }}
-            org.opencontainers.image.licenses=${{ env.OCI_LICENSES }}
-            org.opencontainers.image.description=${{ env.OCI_DESCRIPTION }}
-          annotations: |
-            org.opencontainers.image.source=${{ env.OCI_SOURCE }}
-            org.opencontainers.image.licenses=${{ env.OCI_LICENSES }}
-            org.opencontainers.image.description=${{ env.OCI_DESCRIPTION }}
-        env:
-          DOCKER_METADATA_ANNOTATIONS_LEVELS: manifest,index
-
-      - name: scripts
-        id: prepare
-        run: |
-          cp ./lang/settings.xml ./container/jdk/settings.xml
-
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v7
         with:
-          context: ./container/jdk
+          context: ./
           file: ./container/jdk/jdk25.containerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest"
-          labels: ${{ steps.meta.outputs.labels }}
-          annotations: ${{ steps.meta.outputs.annotations }}

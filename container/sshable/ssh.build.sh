@@ -8,7 +8,7 @@ main() {
     local USERNAME="certseeds"
     local IMAGE_NAME="sshable"
     podman build \
-        -f "$(pwd)"/sshable/ssh.containerfile \
+        -f "$(pwd)"/container/sshable/ssh.containerfile \
         -t "${SOURCE}"/"${USERNAME}"/"${IMAGE_NAME}" \
         .
 }

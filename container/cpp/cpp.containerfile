@@ -1,13 +1,10 @@
 FROM ghcr.io/certseeds/sshable
 
-LABEL org.opencontainers.image.authors="Certseeds <51754303+Certseeds@users.noreply.github.com>" \
-    org.opencontainers.image.source="https://github.com/Certseeds/dotfiles" \
-    org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.description="cpp dev image that can ssh"
 
 RUN export DEBIAN_FRONTEND=noninteractive \
   && yes | apt-get update \
   && yes | apt-get upgrade \
   && yes | apt-get install build-essential cmake gdb make ccache \
+      --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
