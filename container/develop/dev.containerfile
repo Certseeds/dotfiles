@@ -8,11 +8,11 @@ RUN curl -fsSL "https://registry.npmmirror.com/-/binary/python-build-standalone/
   -o /tmp/python.tar.gz
 
 RUN mkdir -p /opt/python \
-  && tar xf /tmp/python.tar.gz \
+  && (tar xf /tmp/python.tar.gz \
     -C /opt/python \
     --strip-components=1 \
     --no-same-owner --no-same-permissions \
-      > /dev/null 2>&1 \
+      > /dev/null 2>&1 || true)\
   && /opt/python/bin/python3 --version
 
 FROM py3-standalone-builder AS uv-builder
@@ -31,12 +31,12 @@ RUN curl -fsSL "https://registry.npmmirror.com/-/binary/node/${NODE_VERSION}/nod
   -o /tmp/node.tar.gz
 
 RUN  mkdir -p /opt/node-lts \
-  && tar xf /tmp/node.tar.gz \
+  && (tar xf /tmp/node.tar.gz \
     -C /opt/node-lts \
     --strip-components=1 \
     --no-same-owner \
     --no-same-permissions \
-      > /dev/null 2>&1 \
+      > /dev/null 2>&1 || true) \
   && /opt/node-lts/bin/node --version
 
 FROM node-builder AS pnpm-builder
