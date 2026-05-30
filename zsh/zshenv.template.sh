@@ -13,3 +13,4 @@ export DISABLE_ERROR_REPORTING=1
 # export CLAUDE_CODE_SIMPLE=1
 
 # put the global env
+export USERNAME="YOUR_NAME"
