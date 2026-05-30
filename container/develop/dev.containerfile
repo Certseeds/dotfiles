@@ -1,3 +1,61 @@
+FROM ghcr.io/certseeds/sshable AS conda-bootstrap
+
+RUN curl -fsSL "https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh" \
+  -o /tmp/miniforge.sh
+
+RUN bash /tmp/miniforge.sh -b -p /opt/conda \
+  && rm /tmp/miniforge.sh
+
+RUN /opt/conda/bin/conda config \
+    --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ \
+  && /opt/conda/bin/conda config \
+    --remove channels defaults 2>/dev/null || true \
+  && /opt/conda/bin/conda config \
+    --set show_channel_urls yes
+
+
+FROM conda-bootstrap AS cmake-builder
+
+RUN /opt/conda/bin/conda create \
+    -y \
+    -p /opt/cmake cmake \
+  && rm -rf /opt/conda/pkgs \
+  && /opt/cmake/bin/cmake --version
+
+
+FROM conda-bootstrap AS ccache-builder
+
+RUN /opt/conda/bin/conda create \
+    -y \
+    -p /opt/ccache ccache \
+  && rm -rf /opt/conda/pkgs \
+  && /opt/ccache/bin/ccache --version
+
+
+FROM conda-bootstrap AS gcc-builder
+
+RUN /opt/conda/bin/conda create \
+    -y \
+    -p /opt/gcc \
+      gcc_linux-64 \
+      gxx_linux-64 \
+      gdb \
+      make \
+  && ln -s x86_64-conda-linux-gnu-gcc /opt/gcc/bin/gcc \
+  && ln -s x86_64-conda-linux-gnu-g++ /opt/gcc/bin/g++ \
+  && mkdir -p /opt/gcc/bin/.gdb-deps \
+  && mv /opt/gcc/bin/python* /opt/gcc/bin/.gdb-deps/ \
+  && mv /opt/gcc/bin/pip* /opt/gcc/bin/.gdb-deps/ \
+  && mv /opt/gcc/bin/pydoc* /opt/gcc/bin/.gdb-deps/ \
+  && mv /opt/gcc/bin/idle* /opt/gcc/bin/.gdb-deps/ \
+  && mv /opt/gcc/bin/pygmentize /opt/gcc/bin/.gdb-deps/ \
+  && mv /opt/gcc/bin/sqlite3_analyzer /opt/gcc/bin/.gdb-deps/ \
+  && rm -rf /opt/conda/pkgs \
+  && /opt/gcc/bin/gcc --version \
+  && /opt/gcc/bin/g++ --version \
+  && /opt/gcc/bin/gdb --version \
+  && /opt/gcc/bin/make --version
+
 FROM ghcr.io/certseeds/sshable:latest AS py3-standalone-builder
 
 ARG PYTHON_BUILD_DATE
@@ -56,11 +114,17 @@ COPY --from=uv-builder /opt/uv /opt/uv
 COPY --from=py3-standalone-builder /opt/python /opt/python
 COPY --from=node-builder /opt/node-lts /opt/node-lts
 COPY --from=pnpm-builder /opt/pnpm /opt/pnpm
+COPY --from=cmake-builder /opt/cmake /opt/cmake
+COPY --from=ccache-builder /opt/ccache /opt/ccache
+COPY --from=gcc-builder /opt/gcc /opt/gcc
 
 ENV PATH="/opt/uv:${PATH}"
 ENV PATH="/opt/python/bin:${PATH}"
 ENV PATH="/opt/node-lts/bin:${PATH}"
 ENV PATH="/opt/pnpm/bin:${PATH}"
+ENV PATH="/opt/cmake/bin:${PATH}"
+ENV PATH="/opt/ccache/bin:${PATH}"
+ENV PATH="/opt/gcc/bin:${PATH}"
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
