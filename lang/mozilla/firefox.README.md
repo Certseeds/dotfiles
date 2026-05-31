@@ -37,8 +37,3 @@ workwith `/HorlogeSkynet/thunderbird-user.js`
 1. update user.js
 2. `cat ./user-overrides.js >> ./user.js`
 3. update symlink
-
-
-```
-
-```

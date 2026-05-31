@@ -47,16 +47,16 @@
       path: scoop.sh
       relink: true
     ~/scoop/persist/firefox/profile/user.js:
-      path: firefox.user.js
+      path: mozilla/firefox.user.js
       relink: true
     ~/scoop/persist/firefox/distribution/policies.json:
-      path: firefox.policies.json
+      path: mozilla/firefox.policies.json
       relink: true
     ~/scoop/persist/thunderbird-esr/profile/user.js:
-      path: thunderbird.user.js
+      path: mozilla/thunderbird.user.js
       relink: true
     ~/scoop/persist/thunderbird-esr/distribution/policies.json:
-      path: firefox.policies.json
+      path: mozilla/firefox.policies.json
       relink: true
     ~/AppData/Local/pdm/pdm/config.toml:
       path: pdm.config.toml

@@ -1,0 +1,132 @@
+[
+    {
+        "id": "CanvasBlocker@kkapsner.de",
+        "name": "CanvasBlocker",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/canvasblocker/"
+    },
+    {
+        "id": "cdnpop@addon.certseeds.com",
+        "name": "CDN(POP) Detect",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/cdn-pop-detect/"
+    },
+    {
+        "id": "langpack-zh-CN@firefox.mozilla.org",
+        "name": "Chinese Simplified (zh-CN) Language Pack",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/chinese-simplified-zh-cn-la/"
+    },
+    {
+        "id": "{74145f27-f039-47ce-a470-a662b129930a}",
+        "name": "ClearURLs",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/clearurls/"
+    },
+    {
+        "id": "jid1-BoFifL9Vbdl2zQ@jetpack",
+        "name": "Decentraleyes",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/decentraleyes/"
+    },
+    {
+        "id": "dont-track-me-google@robwu.nl",
+        "name": "Don't track me Google",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/dont-track-me-google1/"
+    },
+    {
+        "id": "@contain-facebook",
+        "name": "Facebook Container",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/facebook-container/"
+    },
+    {
+        "id": "{1018e4d6-728f-4b20-ad56-37578a4de76b}",
+        "name": "Flagfox",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/flagfox/"
+    },
+    {
+        "id": "{96ef5869-e3ba-4d21-b86e-21b163096400}",
+        "name": "Font Fingerprint Defender",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/font-fingerprint-defender/"
+    },
+    {
+        "id": "jid1-5Fs7iTLscUaZBgwr@jetpack",
+        "name": "Disable WebRTC",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/happy-bonobo-disable-webrtc/"
+    },
+    {
+        "id": "{252ee273-8c8d-4609-b54d-62ae345be0a1}",
+        "name": "IndicateTLS",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/indicatetls/"
+    },
+    {
+        "id": "{16a49f65-1369-4839-a5ef-db2581e08b16}",
+        "name": "JSON Lite",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/json-lite/"
+    },
+    {
+        "id": "{b86e4813-687a-43e6-ab65-0bde4ab75758}",
+        "name": "LocalCDN",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/localcdn-fork-of-decentraleyes/"
+    },
+    {
+        "id": "@testpilot-containers",
+        "name": "Firefox Multi-Account Containers",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/multi-account-containers/"
+    },
+    {
+        "id": "{6c00218c-707a-4977-84cf-36df1cef310f}",
+        "name": "Port Authority",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/port-authority/"
+    },
+    {
+        "id": "jid1-MnnxcxisBPnSXQ@jetpack",
+        "name": "Privacy Badger",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/privacy-badger17/"
+    },
+    {
+        "id": "redirector@einaregilsson.com",
+        "name": "Redirector",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/redirector/"
+    },
+    {
+        "id": "simple-translate@sienori",
+        "name": "Simple Translate",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/simple-translate/"
+    },
+    {
+        "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
+        "name": "TWP - Translate Web Pages",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/traduzir-paginas-web/"
+    },
+    {
+        "id": "@ublacklist",
+        "name": "uBlacklist",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/ublacklist/"
+    },
+    {
+        "id": "uBlock0@raymondhill.net",
+        "name": "uBlock Origin",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/ublock-origin/"
+    },
+    {
+        "id": "jid1-ZSMfwe4lCAw9oQ@jetpack",
+        "name": "Url to QrCode",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/url-to-qrcode/"
+    },
+    {
+        "id": "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}",
+        "name": "User-Agent Switcher and Manager",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/user-agent-string-switcher/"
+    },
+    {
+        "id": "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}",
+        "name": "Violentmonkey",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/violentmonkey/"
+    },
+    {
+        "id": "{2cf5dbed-78fe-4bd5-9524-38fdf837be98}",
+        "name": "WebGL Fingerprint Defender",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/webgl-fingerprint-defender/"
+    },
+    {
+        "id": "suziwen1@gmail.com",
+        "name": "ZeroOmega--Proxy Switchy manifest v3 version",
+        "amoListingURL": "https://addons.mozilla.org/zh-CN/firefox/addon/zeroomega/"
+    }
+]
