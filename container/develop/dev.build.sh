@@ -11,6 +11,8 @@ main() {
     source "${SCRIPT_DIR}/python.version"
     source "${SCRIPT_DIR}/nodejs-lts.version"
     source "${SCRIPT_DIR}/pnpm.version"
+    source "${SCRIPT_DIR}/jdk-lts.version"
+    source "${SCRIPT_DIR}/maven.version"
 
     podman build \
         -f "${SCRIPT_DIR}/dev.containerfile" \
@@ -24,7 +26,11 @@ main() {
         --build-arg PYTHON_BINARY_TYPE="${PYTHON_BINARY_TYPE}" \
         --build-arg NODE_VERSION="${NODE_VERSION}" \
         --build-arg PNPM_VERSION="${PNPM_VERSION}" \
+        --build-arg JDK_MAJOR="${JDK_MAJOR}" \
+        --build-arg JDK_VERSION="${JDK_VERSION}" \
+        --build-arg MAVEN_VERSION="${MAVEN_VERSION}" \
         .
+
 }
 
 main

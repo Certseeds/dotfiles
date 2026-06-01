@@ -8,6 +8,9 @@ from pathlib import Path
 from urllib.request import urlopen
 
 NPM_MIRROR = "https://registry.npmmirror.com"
+ADOPTIUM_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/Adoptium"
+JDK_LTS_VERSIONS = [25, 21, 17, 11, 8]
+MAVEN_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3"
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
@@ -71,18 +74,57 @@ def fetch_pnpm_version() -> str:
     return data["version"]
 
 
+def fetch_jdk_lts() -> tuple[int, str]:
+    """Return (major_version, full_version) for the latest available LTS JDK on Adoptium."""
+    index_html = urlopen(f"{ADOPTIUM_MIRROR}/").read().decode()
+    available = set(map(int, re.findall(r'href="(\d+)/"', index_html)))
+
+    major = next((v for v in JDK_LTS_VERSIONS if v in available), None)
+    if major is None:
+        sys.exit(f"No LTS JDK found. Available versions: {available}")
+
+    listing_url = f"{ADOPTIUM_MIRROR}/{major}/jdk/x64/linux/"
+    listing = urlopen(listing_url).read().decode()
+
+    pattern = re.compile(rf'OpenJDK{major}U-jdk_x64_linux_hotspot_(\d+\.\d+\.\d+_\d+)\.tar\.gz')
+    versions = pattern.findall(listing)
+
+    if not versions:
+        sys.exit(f"No JDK {major} releases found at {listing_url}")
+
+    def _version_key(v: str) -> tuple[int, ...]:
+        return tuple(map(int, re.split(r"[._]", v)))
+
+    return major, max(versions, key=_version_key)
+
+
+def fetch_maven_version() -> str:
+    """Return the latest Maven version from TUNA Apache mirror."""
+    index_html = urlopen(MAVEN_MIRROR + "/").read().decode()
+    versions = re.findall(r'(\d+\.\d+\.\d+)/', index_html)
+    if not versions:
+        sys.exit(f"No Maven versions found at {MAVEN_MIRROR}")
+    return max(versions, key=lambda v: tuple(map(int, v.split("."))))
+
+
 def main() -> None:
     py_ver, py_date, py_type = fetch_python_version()
     node_ver = fetch_node_lts()
     pnpm_ver = fetch_pnpm_version()
+    jdk_major, jdk_ver = fetch_jdk_lts()
+    maven_ver = fetch_maven_version()
 
     (SCRIPT_DIR / "python.version").write_text(f"PYTHON_BUILD_DATE={py_date}\nPYTHON_VERSION={py_ver}\nPYTHON_BINARY_TYPE={py_type}\n")
     (SCRIPT_DIR / "nodejs-lts.version").write_text(f"NODE_VERSION={node_ver}\n")
     (SCRIPT_DIR / "pnpm.version").write_text(f"PNPM_VERSION={pnpm_ver}\n")
+    (SCRIPT_DIR / "jdk-lts.version").write_text(f"JDK_MAJOR={jdk_major}\nJDK_VERSION={jdk_ver}\n")
+    (SCRIPT_DIR / "maven.version").write_text(f"MAVEN_VERSION={maven_ver}\n")
 
     print(f"Python: {py_ver} (build {py_date}, {py_type})")
     print(f"Node LTS: {node_ver}")
     print(f"pnpm: {pnpm_ver}")
+    print(f"JDK LTS: {jdk_major} ({jdk_ver})")
+    print(f"Maven: {maven_ver}")
 
 
 if __name__ == "__main__":

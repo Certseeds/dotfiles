@@ -6,19 +6,17 @@ RUN curl -fsSL "https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/
 RUN bash /tmp/miniforge.sh -b -p /opt/conda \
   && rm /tmp/miniforge.sh
 
-RUN /opt/conda/bin/conda config \
-    --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ \
-  && /opt/conda/bin/conda config \
-    --remove channels defaults 2>/dev/null || true \
-  && /opt/conda/bin/conda config \
-    --set show_channel_urls yes
+COPY ./lang/.condarc /opt/conda/.condarc
+COPY ./container/develop/hide-deps.py /usr/local/bin/hide-deps
 
+ENV PATH="/opt/conda/bin:${PATH}"
 
 FROM conda-bootstrap AS cmake-builder
 
 RUN /opt/conda/bin/conda create \
     -y \
     -p /opt/cmake cmake \
+  && hide-deps /opt/cmake -- cmake ccmake cpack ctest \
   && rm -rf /opt/conda/pkgs \
   && /opt/cmake/bin/cmake --version
 
@@ -28,6 +26,7 @@ FROM conda-bootstrap AS ccache-builder
 RUN /opt/conda/bin/conda create \
     -y \
     -p /opt/ccache ccache \
+  && hide-deps /opt/ccache -- ccache \
   && rm -rf /opt/conda/pkgs \
   && /opt/ccache/bin/ccache --version
 
@@ -43,13 +42,7 @@ RUN /opt/conda/bin/conda create \
       make \
   && ln -s x86_64-conda-linux-gnu-gcc /opt/gcc/bin/gcc \
   && ln -s x86_64-conda-linux-gnu-g++ /opt/gcc/bin/g++ \
-  && mkdir -p /opt/gcc/bin/.gdb-deps \
-  && mv /opt/gcc/bin/python* /opt/gcc/bin/.gdb-deps/ \
-  && mv /opt/gcc/bin/pip* /opt/gcc/bin/.gdb-deps/ \
-  && mv /opt/gcc/bin/pydoc* /opt/gcc/bin/.gdb-deps/ \
-  && mv /opt/gcc/bin/idle* /opt/gcc/bin/.gdb-deps/ \
-  && mv /opt/gcc/bin/pygmentize /opt/gcc/bin/.gdb-deps/ \
-  && mv /opt/gcc/bin/sqlite3_analyzer /opt/gcc/bin/.gdb-deps/ \
+  && hide-deps /opt/gcc -- gcc g++ gdb make gcore gdb-add-index gdbserver gstack 'x86_64-conda-linux-gnu-*' \
   && rm -rf /opt/conda/pkgs \
   && /opt/gcc/bin/gcc --version \
   && /opt/gcc/bin/g++ --version \
@@ -108,6 +101,42 @@ RUN /opt/node-lts/bin/npm install -g pnpm@${PNPM_VERSION} \
   && cp /opt/pnpm/bin/pnpm.cjs /opt/pnpm/bin/pnpm \
   && chmod +x /opt/pnpm/bin/pnpm
 
+
+FROM ghcr.io/certseeds/sshable:latest AS jdk-builder
+
+ARG JDK_MAJOR
+ARG JDK_VERSION
+
+RUN curl -fsSL "https://mirrors.tuna.tsinghua.edu.cn/Adoptium/${JDK_MAJOR}/jdk/x64/linux/OpenJDK${JDK_MAJOR}U-jdk_x64_linux_hotspot_${JDK_VERSION}.tar.gz" \
+  -o /tmp/jdk.tar.gz
+
+RUN mkdir -p /opt/jdk \
+  && (tar xf /tmp/jdk.tar.gz \
+    -C /opt/jdk \
+    --strip-components=1 \
+    --no-same-owner --no-same-permissions \
+      > /dev/null 2>&1 || true) \
+  && /opt/jdk/bin/java --version
+
+
+FROM jdk-builder AS maven-builder
+
+ARG MAVEN_VERSION
+ENV JAVA_HOME=/opt/jdk
+
+RUN curl -fsSL "https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" \
+  -o /tmp/maven.tar.gz
+
+RUN mkdir -p /opt/mvn \
+  && (tar xf /tmp/maven.tar.gz \
+    -C /opt/mvn \
+    --strip-components=1 \
+    --no-same-owner \
+    --no-same-permissions \
+      > /dev/null 2>&1 || true) \
+  && /opt/mvn/bin/mvn --version
+
+
 FROM ghcr.io/certseeds/sshable:latest
 
 COPY --from=uv-builder /opt/uv /opt/uv
@@ -117,14 +146,18 @@ COPY --from=pnpm-builder /opt/pnpm /opt/pnpm
 COPY --from=cmake-builder /opt/cmake /opt/cmake
 COPY --from=ccache-builder /opt/ccache /opt/ccache
 COPY --from=gcc-builder /opt/gcc /opt/gcc
+COPY --from=jdk-builder /opt/jdk /opt/jdk
+COPY --from=maven-builder /opt/mvn /opt/mvn
 
+ENV PATH="/opt/cmake/bin:${PATH}"
+ENV PATH="/opt/ccache/bin:${PATH}"
+ENV PATH="/opt/gcc/bin:${PATH}"
+ENV PATH="/opt/jdk/bin:${PATH}"
+ENV PATH="/opt/mvn/bin:${PATH}"
 ENV PATH="/opt/uv:${PATH}"
 ENV PATH="/opt/python/bin:${PATH}"
 ENV PATH="/opt/node-lts/bin:${PATH}"
 ENV PATH="/opt/pnpm/bin:${PATH}"
-ENV PATH="/opt/cmake/bin:${PATH}"
-ENV PATH="/opt/ccache/bin:${PATH}"
-ENV PATH="/opt/gcc/bin:${PATH}"
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
@@ -133,6 +166,7 @@ ENV PATH="/home/${USERNAME}/.local/share/pnpm/bin:${PATH}"
 RUN mkdir -p /home/${USERNAME}/.config/pip \
   /home/${USERNAME}/.config/uv \
   /home/${USERNAME}/.config/pnpm \
+  /home/${USERNAME}/.m2 \
   /home/${USERNAME}/.local/share/pnpm/bin
 
 COPY --chown=${USERNAME}: ./lang/pip.conf /home/${USERNAME}/.config/pip/pip.conf
@@ -140,5 +174,6 @@ COPY --chown=${USERNAME}: ./lang/uv.toml /home/${USERNAME}/.config/uv/uv.toml
 COPY --chown=${USERNAME}: ./lang/.npmrc /home/${USERNAME}/.npmrc
 COPY --chown=${USERNAME}: ./lang/pnpm.config.yaml /home/${USERNAME}/.config/pnpm/config.yaml
 COPY --chown=${USERNAME}: ./lang/pnpm.config.rc /home/${USERNAME}/.config/pnpm/rc
+COPY --chown=${USERNAME}: ./lang/settings.xml /home/${USERNAME}/.m2/settings.xml
 
 ENTRYPOINT ["/bin/bash"]

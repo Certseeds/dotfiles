@@ -1,3 +1,3 @@
 # nodejs镜像
 
-开发镜像, 内置 python3 & uv, nodejs-lts & pnpm
+开发镜像, 内置 python3 & uv, nodejs-lts & pnpm, gcc, cmake & ccache 以及 openjdk25 & mvn
