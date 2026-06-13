@@ -14,9 +14,9 @@
     - ~/AppData/Roaming/uv
     - ~/AppData/Local/pnpm/config
     - ~/scoop/persist/thunderbird-esr/profile
-    - ~/scoop/persist/thunderbird-esr/distribution
+    - ~/scoop/apps/thunderbird-esr/current/distribution
     - ~/scoop/persist/firefox/profile
-    - ~/scoop/persist/firefox/distribution
+    - ~/scoop/apps/firefox/current/distribution
 
 - link:
     ~/.gnupg/gpg.conf:
@@ -49,13 +49,13 @@
     ~/scoop/persist/firefox/profile/user.js:
       path: mozilla/firefox.user.js
       relink: true
-    ~/scoop/persist/firefox/distribution/policies.json:
+    ~/scoop/apps/firefox/current/distribution/policies.json:
       path: mozilla/firefox.policies.json
       relink: true
     ~/scoop/persist/thunderbird-esr/profile/user.js:
       path: mozilla/thunderbird.user.js
       relink: true
-    ~/scoop/persist/thunderbird-esr/distribution/policies.json:
+    ~/scoop/apps/thunderbird-esr/current/distribution/policies.json:
       path: mozilla/firefox.policies.json
       relink: true
     ~/AppData/Local/pdm/pdm/config.toml:
