@@ -570,7 +570,7 @@
             },
             {
                 "id": 29,
-                "pattern": "^[0-9]{1,18}$",
+                "pattern": "^[0-9]{1,30}$",
                 "patternFlags": 0,
                 "patternExtra": "",
                 "patternExtraFlags": 0,
@@ -894,7 +894,7 @@
             },
             {
                 "id": 22,
-                "pattern": "^[0-9]{1,18}$",
+                "pattern": "^[0-9]{1,30}$",
                 "patternFlags": 0,
                 "patternExtra": "",
                 "patternExtraFlags": 0,
