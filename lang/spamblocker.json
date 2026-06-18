@@ -891,22 +891,6 @@
                 "blockType": 0,
                 "blockTypeConfig": "",
                 "simSlot": null
-            },
-            {
-                "id": 22,
-                "pattern": "^[0-9]{1,30}$",
-                "patternFlags": 0,
-                "patternExtra": "",
-                "patternExtraFlags": 0,
-                "description": "",
-                "priority": 29,
-                "isBlacklist": true,
-                "flags": 3,
-                "channel": "None",
-                "schedule": ",00:00-00:00,false",
-                "blockType": 0,
-                "blockTypeConfig": "",
-                "simSlot": 1
             }
         ]
     },
