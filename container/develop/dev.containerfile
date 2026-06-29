@@ -137,6 +137,22 @@ RUN mkdir -p /opt/mvn \
   && /opt/mvn/bin/mvn --version
 
 
+FROM ghcr.io/certseeds/sshable:latest AS golang-builder
+
+ARG GO_VERSION
+
+RUN curl -fsSL "https://mirrors.aliyun.com/golang/go${GO_VERSION}.linux-amd64.tar.gz" \
+  -o /tmp/go.tar.gz
+
+RUN mkdir -p /opt/go \
+  && (tar xf /tmp/go.tar.gz \
+    -C /opt/go \
+    --strip-components=1 \
+    --no-same-owner --no-same-permissions \
+      > /dev/null 2>&1 || true) \
+  && /opt/go/bin/go version
+
+
 FROM ghcr.io/certseeds/sshable:latest
 
 COPY --from=uv-builder /opt/uv /opt/uv
@@ -148,6 +164,7 @@ COPY --from=ccache-builder /opt/ccache /opt/ccache
 COPY --from=gcc-builder /opt/gcc /opt/gcc
 COPY --from=jdk-builder /opt/jdk /opt/jdk
 COPY --from=maven-builder /opt/mvn /opt/mvn
+COPY --from=golang-builder /opt/go /opt/go
 
 ENV PATH="/opt/cmake/bin:${PATH}"
 ENV PATH="/opt/ccache/bin:${PATH}"
@@ -158,10 +175,16 @@ ENV PATH="/opt/uv:${PATH}"
 ENV PATH="/opt/python/bin:${PATH}"
 ENV PATH="/opt/node-lts/bin:${PATH}"
 ENV PATH="/opt/pnpm/bin:${PATH}"
+ENV PATH="/opt/go/bin:${PATH}"
+
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.cn,direct
+ENV GONOSUMDB=*
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
 ENV PATH="/home/${USERNAME}/.local/share/pnpm/bin:${PATH}"
+ENV PATH="/home/${USERNAME}/go/bin:${PATH}"
 
 RUN mkdir -p /home/${USERNAME}/.config/pip \
   /home/${USERNAME}/.config/uv \

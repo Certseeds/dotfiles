@@ -3,7 +3,7 @@ set -euox pipefail
 main() {
     local SOURCE="ghcr.io"
     local USERNAME="certseeds"
-    local IMAGE_NAME="dev"
+    local IMAGE_NAME="develop"
     podman run \
         -dit \
         -e HTTP_PROXY="" \

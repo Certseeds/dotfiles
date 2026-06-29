@@ -13,6 +13,7 @@ main() {
     source "${SCRIPT_DIR}/pnpm.version"
     source "${SCRIPT_DIR}/jdk-lts.version"
     source "${SCRIPT_DIR}/maven.version"
+    source "${SCRIPT_DIR}/golang.version"
 
     podman build \
         -f "${SCRIPT_DIR}/dev.containerfile" \
@@ -29,6 +30,7 @@ main() {
         --build-arg JDK_MAJOR="${JDK_MAJOR}" \
         --build-arg JDK_VERSION="${JDK_VERSION}" \
         --build-arg MAVEN_VERSION="${MAVEN_VERSION}" \
+        --build-arg GO_VERSION="${GO_VERSION}" \
         .
 
 }

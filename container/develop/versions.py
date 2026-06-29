@@ -11,6 +11,7 @@ NPM_MIRROR = "https://registry.npmmirror.com"
 ADOPTIUM_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/Adoptium"
 JDK_LTS_VERSIONS = [25, 21, 17, 11, 8]
 MAVEN_MIRROR = "https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3"
+GOLANG_MIRROR = "https://mirrors.aliyun.com/golang"
 SCRIPT_DIR = Path(__file__).resolve().parent
 
 
@@ -107,24 +108,37 @@ def fetch_maven_version() -> str:
     return max(versions, key=lambda v: tuple(map(int, v.split("."))))
 
 
+def fetch_golang_version() -> str:
+    """Return the latest stable Go version (e.g. 1.26.4)."""
+    index_html = urlopen(GOLANG_MIRROR + "/").read().decode()
+    pattern = re.compile(r'go(\d+\.\d+\.\d+)\.linux-amd64\.tar\.gz')
+    versions = pattern.findall(index_html)
+    if not versions:
+        sys.exit(f"No Go versions found at {GOLANG_MIRROR}")
+    return max(versions, key=lambda v: tuple(map(int, v.split("."))))
+
+
 def main() -> None:
     py_ver, py_date, py_type = fetch_python_version()
     node_ver = fetch_node_lts()
     pnpm_ver = fetch_pnpm_version()
     jdk_major, jdk_ver = fetch_jdk_lts()
     maven_ver = fetch_maven_version()
+    go_ver = fetch_golang_version()
 
     (SCRIPT_DIR / "python.version").write_text(f"PYTHON_BUILD_DATE={py_date}\nPYTHON_VERSION={py_ver}\nPYTHON_BINARY_TYPE={py_type}\n")
     (SCRIPT_DIR / "nodejs-lts.version").write_text(f"NODE_VERSION={node_ver}\n")
     (SCRIPT_DIR / "pnpm.version").write_text(f"PNPM_VERSION={pnpm_ver}\n")
     (SCRIPT_DIR / "jdk-lts.version").write_text(f"JDK_MAJOR={jdk_major}\nJDK_VERSION={jdk_ver}\n")
     (SCRIPT_DIR / "maven.version").write_text(f"MAVEN_VERSION={maven_ver}\n")
+    (SCRIPT_DIR / "golang.version").write_text(f"GO_VERSION={go_ver}\n")
 
     print(f"Python: {py_ver} (build {py_date}, {py_type})")
     print(f"Node LTS: {node_ver}")
     print(f"pnpm: {pnpm_ver}")
     print(f"JDK LTS: {jdk_major} ({jdk_ver})")
     print(f"Maven: {maven_ver}")
+    print(f"Go: {go_ver}")
 
 
 if __name__ == "__main__":
