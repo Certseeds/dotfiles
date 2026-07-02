@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/0xERR0R/blocky/main/docs/config.schema.json
+
+bootstrapDns:
+  - tcp+udp:223.5.5.5
+  - tcp+udp:223.6.6.6
+  - tcp+udp:119.29.29.29
+  - tcp+udp:182.254.116.116
+
+# === 上游 DNS ===
+upstreams:
+  groups:
+    default:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+
+# === 下游端口：仅 DNS 53 ===
+ports:
+  dns: 53
+  http: 4000
+
+statistics:
+    enable: true
+
+# === 日志：info级别 / 文本模式 / 带时间戳 ===
+log:
+  level: info
+  format: text
+  timestamp: true
+
+# === 黑名单过滤：本地文件 ===
+blocking:
+  loading:
+    refreshPeriod: 1h
+  denylists:
+    defaults:
+      - "https://big.oisd.nl/domainswild"
+      - "https://raw.githubusercontent.com/StevenBlack/hosts/refs/heads/master/hosts"
+      - "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
+      - "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt"
+      - "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
+      - "https://v.firebog.net/hosts/AdguardDNS.txt"
+      - "https://v.firebog.net/hosts/Easyprivacy.txt"
+      - "https://v.firebog.net/hosts/Prigent-Ads.txt"
+      - "https://phishing.army/download/phishing_army_blocklist_extended.txt"
+      - "https://urlhaus.abuse.ch/downloads/hostfile/"
+    custom:
+      - |
+        *.ant.dev
+        *.anthropic.com
+        *.claude.ai
+        *.claude.com
+        *.claudeusercontent.com
+        *.datadoghq.com
+        *.fedstart.com
+        *.growthbook.io
+  clientGroupsBlock:
+    default:
+      - defaults
+      - custom
+
+# === 域名→地址映射：本地 hosts 文件 ===
+hostsFile:
+  sources:
+    - /etc/hosts
+  hostsTTL: 1h
+
+caching:
+  minTime: 5m        # 至少缓存 5 min
+  maxTime: 30m       # 最多缓存 30 分钟
+  maxItemsCount: 0   # 0 = 不限制条目数
+  prefetching: true  # 开启预取，过期前自动续期
+  prefetchExpires: 2h
+  prefetchThreshold: 5

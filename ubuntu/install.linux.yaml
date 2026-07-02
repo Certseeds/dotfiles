@@ -1,0 +1,19 @@
+- create:
+    - ~/.config/systemd/user
+    - ~/repo/blocky/conf
+
+- link:
+    ~/repo/blocky/config.yaml:
+      path: blocky/blocky.yaml
+      relink: true
+
+- shell:
+    - command: sudo ln -sf $HOME/dotfiles/ubuntu/blocky/blocky.journald.conf /etc/systemd/journald.conf.d/blocky.conf
+      description: "Symlink journald drop-in config"
+    - command: sudo ln -sf $HOME/dotfiles/ubuntu/blocky/blocky.systemd.conf /etc/systemd/system/blocky.service
+      description: "Symlink blocky systemd service"
+    - command: sudo systemctl daemon-reload
+      description: "Reload systemd daemon (system-level)"
+    - command: echo "✅ All dotfiles linked and system configs set."
+      description: "Confirming setup completion"
+      stdout: true
