@@ -99,7 +99,9 @@ RUN /opt/node-lts/bin/npm install -g pnpm@${PNPM_VERSION} \
     --registry=https://registry.npmmirror.com \
   && cp -r /opt/node-lts/lib/node_modules/pnpm /opt/pnpm \
   && cp /opt/pnpm/bin/pnpm.cjs /opt/pnpm/bin/pnpm \
-  && chmod +x /opt/pnpm/bin/pnpm
+  && cp /opt/pnpm/bin/pnpx.cjs /opt/pnpm/bin/pnpx \
+  && chmod +x /opt/pnpm/bin/pnpm \
+  && chmod +x /opt/pnpm/bin/pnpx
 
 
 FROM ghcr.io/certseeds/sshable:latest AS jdk-builder
