@@ -99,12 +99,44 @@ $script = {
       -FeatureName 'Recall' `
       -Remove
   }
+  function disableCDP() {
+    reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\CDPSvc" `
+      /v Start `
+      /t REG_DWORD `
+      /d 4 `
+      /f
+    reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" `
+      /v Start `
+      /t REG_DWORD `
+      /d 4 `
+      /f
+  }
+  function disableActivityHistory() {
+    reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /f
+    reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" `
+      /v EnableActivityFeed `
+      /t REG_DWORD `
+      /d 0 `
+      /f
+    reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" `
+      /v PublishUserActivities `
+      /t REG_DWORD `
+      /d 0 `
+      /f
+    reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" `
+      /v UploadUserActivities `
+      /t REG_DWORD `
+      /d 0 `
+      /f
+  }
   function main {
     HideDesktopIcons
     RemoveImageLibrary
     MsEdge
     disableNetworkSearch
     disableEvilRecall
+    disableCDP
+    disableActivityHistory
   }
 
   main
