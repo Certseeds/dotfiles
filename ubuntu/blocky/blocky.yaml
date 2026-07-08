@@ -30,7 +30,7 @@ log:
 # === 黑名单过滤：本地文件 ===
 blocking:
   loading:
-    refreshPeriod: 1h
+    refreshPeriod: 12h
   denylists:
     defaults:
       - "https://big.oisd.nl/domainswild"
@@ -66,7 +66,7 @@ hostsFile:
 
 caching:
   minTime: 5m        # 至少缓存 5 min
-  maxTime: 30m       # 最多缓存 30 分钟
+  maxTime: 0         # 尊重原始TTL
   maxItemsCount: 0   # 0 = 不限制条目数
   prefetching: true  # 开启预取，过期前自动续期
   prefetchExpires: 2h
