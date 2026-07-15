@@ -34,25 +34,30 @@ blocking:
   denylists:
     defaults:
       - "https://big.oisd.nl/domainswild"
-      - "https://cdn.jsdelivr.net/gh/StevenBlack/hosts@master/hosts"
-      - "https://cdn.jsdelivr.net/gh/VeleSila/yhosts@master/hosts"
-      - "https://cdn.jsdelivr.net/gh/PolishFiltersTeam/KADhosts@master/KADhosts.txt"
-      - "https://cdn.jsdelivr.net/gh/jdlingyu/ad-wars@master/hosts"
+      - "https://gcore.jsdelivr.net/gh/StevenBlack/hosts@master/hosts"
+      - "https://gcore.jsdelivr.net/gh/VeleSila/yhosts@master/hosts"
+      - "https://gcore.jsdelivr.net/gh/PolishFiltersTeam/KADhosts@master/KADhosts.txt"
+      - "https://gcore.jsdelivr.net/gh/jdlingyu/ad-wars@master/hosts"
       - "https://v.firebog.net/hosts/AdguardDNS.txt"
       - "https://v.firebog.net/hosts/Easyprivacy.txt"
       - "https://v.firebog.net/hosts/Prigent-Ads.txt"
       - "https://phishing.army/download/phishing_army_blocklist_extended.txt"
       - "https://urlhaus.abuse.ch/downloads/hostfile/"
-      - "https://cdn.jsdelivr.net/gh/ph00lt0/blocklist@master/hosts-blocklist.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.apple.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.huawei.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.oppo-realme.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.samsung.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.vivo.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.winoffice.txt"
-      - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.xiaomi.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.apple.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.huawei.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.oppo-realme.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.samsung.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.vivo.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.winoffice.txt"
+      - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@main/domains/native.xiaomi.txt"
+      - "https://gcore.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-hosts.txt"
     custom:
       - /opt/hosts
+  allowlists:
+    default:
+      - "https://gcore.jsdelivr.net/gh/anudeepND/whitelist@master/domains/whitelist.txt"
+    mainland:
+      - "/opt/whitelist.hosts"
   clientGroupsBlock:
     default:
       - defaults

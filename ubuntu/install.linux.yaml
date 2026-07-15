@@ -17,3 +17,6 @@
     - command: echo "✅ All dotfiles linked and system configs set."
       description: "Confirming setup completion"
       stdout: true
+    - command: sudo ln -sf $HOME/dotfiles/ubuntu/blocky/whitelist.txt /opt/whitelist.hosts
+      description: echo "link whitelist.txt to opt"
+      

@@ -1,0 +1,4 @@
+! miui cloud backup
+a0.app.xiaomi.com
+! sougou online data collect domain
+shouji.sougou.com
