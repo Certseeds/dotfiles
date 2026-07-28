@@ -70,9 +70,12 @@ def fetch_node_lts() -> str:
 
 
 def fetch_pnpm_version() -> str:
-    """Return the latest pnpm version."""
-    data = json.loads(urlopen(f"{NPM_MIRROR}/pnpm/latest").read())
-    return data["version"]
+    """Return the latest pnpm v10 version."""
+    data = json.loads(urlopen(f"{NPM_MIRROR}/pnpm").read())
+    v10_versions = [v for v in data["versions"] if v.startswith("10.") and re.match(r"^\d+\.\d+\.\d+$", v)]
+    if not v10_versions:
+        sys.exit("No pnpm v10 versions found")
+    return max(v10_versions, key=lambda v: tuple(map(int, v.split("."))))
 
 
 def fetch_jdk_lts() -> tuple[int, str]:

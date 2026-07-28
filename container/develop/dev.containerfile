@@ -49,8 +49,17 @@ RUN /opt/conda/bin/conda create \
   && /opt/gcc/bin/gdb --version \
   && /opt/gcc/bin/make --version
 
-FROM ghcr.io/certseeds/sshable:latest AS py3-standalone-builder
+FROM conda-bootstrap AS gtest-builder
 
+RUN /opt/conda/bin/conda create \
+    -y \
+    -p /opt/gtest gtest \
+  && rm -rf /opt/conda/pkgs
+
+ARG PYTHON_BUILD_DATE
+ARG PYTHON_VERSION
+ARG PYTHON_BINARY_TYPE
+FROM ghcr.io/certseeds/sshable:latest AS py3-standalone-builder
 ARG PYTHON_BUILD_DATE
 ARG PYTHON_VERSION
 ARG PYTHON_BINARY_TYPE
@@ -74,8 +83,8 @@ RUN /opt/python/bin/pip install uv \
   && cp /opt/python/bin/uv /opt/uv/ \
   && cp /opt/python/bin/uvx /opt/uv/
 
+ARG NODE_VERSION
 FROM ghcr.io/certseeds/sshable:latest AS node-builder
-
 ARG NODE_VERSION
 
 RUN curl -fsSL "https://registry.npmmirror.com/-/binary/node/${NODE_VERSION}/node-${NODE_VERSION}-linux-x64.tar.gz" \
@@ -90,8 +99,8 @@ RUN  mkdir -p /opt/node-lts \
       > /dev/null 2>&1 || true) \
   && /opt/node-lts/bin/node --version
 
+ARG PNPM_VERSION
 FROM node-builder AS pnpm-builder
-
 ARG PNPM_VERSION
 ENV PATH="/opt/node-lts/bin:${PATH}"
 
@@ -104,8 +113,9 @@ RUN /opt/node-lts/bin/npm install -g pnpm@${PNPM_VERSION} \
   && chmod +x /opt/pnpm/bin/pnpx
 
 
+ARG JDK_MAJOR
+ARG JDK_VERSION
 FROM ghcr.io/certseeds/sshable:latest AS jdk-builder
-
 ARG JDK_MAJOR
 ARG JDK_VERSION
 
@@ -121,8 +131,8 @@ RUN mkdir -p /opt/jdk \
   && /opt/jdk/bin/java --version
 
 
+ARG MAVEN_VERSION
 FROM jdk-builder AS maven-builder
-
 ARG MAVEN_VERSION
 ENV JAVA_HOME=/opt/jdk
 
@@ -139,8 +149,8 @@ RUN mkdir -p /opt/mvn \
   && /opt/mvn/bin/mvn --version
 
 
+ARG GO_VERSION
 FROM ghcr.io/certseeds/sshable:latest AS golang-builder
-
 ARG GO_VERSION
 
 RUN curl -fsSL "https://mirrors.aliyun.com/golang/go${GO_VERSION}.linux-amd64.tar.gz" \
@@ -167,6 +177,7 @@ COPY --from=gcc-builder /opt/gcc /opt/gcc
 COPY --from=jdk-builder /opt/jdk /opt/jdk
 COPY --from=maven-builder /opt/mvn /opt/mvn
 COPY --from=golang-builder /opt/go /opt/go
+COPY --from=gtest-builder /opt/gtest /opt/gtest
 
 ENV PATH="/opt/cmake/bin:${PATH}"
 ENV PATH="/opt/ccache/bin:${PATH}"
@@ -178,6 +189,7 @@ ENV PATH="/opt/python/bin:${PATH}"
 ENV PATH="/opt/node-lts/bin:${PATH}"
 ENV PATH="/opt/pnpm/bin:${PATH}"
 ENV PATH="/opt/go/bin:${PATH}"
+ENV CMAKE_PREFIX_PATH="/opt/gtest:${CMAKE_PREFIX_PATH}"
 
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.cn,direct
