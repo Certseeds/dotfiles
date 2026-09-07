@@ -12,6 +12,8 @@
     - ~/.config/pdm
     - ~/.config/uv
     - ~/.config/pnpm
+    - ~/.claude
+    - ~/.codex
 
 - link:
     ~/.condarc:
@@ -62,6 +64,9 @@
       relink: true
     ~/.claude/settings.json:
       path: agents/cc.json
+      relink: true
+    ~/.codex/config.toml:
+      path: agents/codex.toml
       relink: true
 
 - shell:

@@ -17,6 +17,8 @@
     - ~/scoop/apps/thunderbird-esr/current/distribution
     - ~/scoop/persist/firefox/profile
     - ~/scoop/apps/firefox/current/distribution
+    - ~/.claude
+    - ~/.codex
 
 - link:
     ~/.gnupg/gpg.conf:
@@ -78,6 +80,12 @@
       relink: true
     'C:\Windows\System32\drivers\etc\hosts':
       path: hosts.conf
+      relink: true
+    ~/.claude/settings.json:
+      path: agents/cc.json
+      relink: true
+    ~/.codex/config.toml:
+      path: agents/codex.toml
       relink: true
 
 - shell:

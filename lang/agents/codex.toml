@@ -1,0 +1,35 @@
+check_for_update_on_startup = false
+model_provider = "custom"
+model = "deepseek/deepseek-v4-flash-vision-exp"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+model_catalog_json = "cc-switch-model-catalog.json"
+
+[model_providers.custom]
+name = "custom"
+wire_api = "responses"
+requires_openai_auth = false
+base_url = "http://127.0.0.1:15721/v1"
+experimental_bearer_token = "PROXY_MANAGED"
+
+[plugins."superpowers@openai-api-curated"]
+enabled = true
+
+[analytics]
+# Stop the anonymous usage/health metrics sent back to OpenAI by default.
+enabled = false
+
+[feedback]
+# Disable /feedback submissions.
+enabled = false
+
+[history]
+persistence = "save-all"
+
+[otel]
+# OpenTelemetry is opt-in, but explicitly pin every exporter to "none".
+log_user_prompt = false
+environment = "dev"
+exporter = "none"
+trace_exporter = "none"
+metrics_exporter = "none"
