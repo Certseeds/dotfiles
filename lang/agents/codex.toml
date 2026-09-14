@@ -1,9 +1,12 @@
 check_for_update_on_startup = false
 model_provider = "custom"
-model = "deepseek/deepseek-v4-flash-vision-exp"
+model = "deepseek/deepseek-v4.1-flash"
 model_reasoning_effort = "xhigh"
 disable_response_storage = true
 model_catalog_json = "cc-switch-model-catalog.json"
+
+[tui]
+show_tooltips = false
 
 [model_providers.custom]
 name = "custom"
