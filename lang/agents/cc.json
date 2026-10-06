@@ -72,5 +72,6 @@
   "theme": "dark",
   "verbose": true,
   "autoUpdates": false,
-  "dangerouslySkipLogin": true
+  "dangerouslySkipLogin": true,
+  "enableArtifact": false
 }
