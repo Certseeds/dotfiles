@@ -14,6 +14,7 @@
     - ~/.config/pnpm
     - ~/.claude
     - ~/.codex
+    - ~/.config/go
 
 - link:
     ~/.condarc:
@@ -67,6 +68,9 @@
       relink: true
     ~/.codex/config.toml:
       path: agents/codex.toml
+      relink: true
+    ~/.config/go/env:
+      path: go.env
       relink: true
 
 - shell:

@@ -19,6 +19,7 @@
     - ~/scoop/apps/firefox/current/distribution
     - ~/.claude
     - ~/.codex
+    - ~/AppData/Roaming/go
 
 - link:
     ~/.gnupg/gpg.conf:
@@ -86,6 +87,9 @@
       relink: true
     ~/.codex/config.toml:
       path: agents/codex.toml
+      relink: true
+    ~/AppData/Roaming/go/env:
+      path: go.env
       relink: true
 
 - shell:
