@@ -53,6 +53,8 @@ blocking:
       - "https://gcore.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-hosts.txt"
     custom:
       - /opt/hosts
+      - /opt/humanoid.blacklist.txt
+      - /opt/closehate.blacklist.txt
   allowlists:
     default:
       - "https://gcore.jsdelivr.net/gh/anudeepND/whitelist@master/domains/whitelist.txt"

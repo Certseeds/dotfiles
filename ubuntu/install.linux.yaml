@@ -12,11 +12,14 @@
       description: "Symlink journald drop-in config"
     - command: sudo ln -sf $HOME/dotfiles/ubuntu/blocky/blocky.systemd.conf /etc/systemd/system/blocky.service
       description: "Symlink blocky systemd service"
+    - command: sudo cp $HOME/dotfiles/ubuntu/blocky/whitelist.txt /opt/whitelist.hosts
+      description: echo "cp whitelist.txt to opt"
+    - command: sudo cp $HOME/dotfiles/ubuntu/blocky/humanoid.blacklist.txt /opt/humanoid.blacklist.txt
+      description: echo "cp humanoid.blacklist.txt to opt"
+    - command: sudo cp $HOME/dotfiles/ubuntu/blocky/closehate.blacklist.txt /opt/closehate.blacklist.txt
+      description: echo "cp closehate.blacklist.txt to opt"
     - command: sudo systemctl daemon-reload
       description: "Reload systemd daemon (system-level)"
     - command: echo "✅ All dotfiles linked and system configs set."
       description: "Confirming setup completion"
       stdout: true
-    - command: sudo ln -sf $HOME/dotfiles/ubuntu/blocky/whitelist.txt /opt/whitelist.hosts
-      description: echo "link whitelist.txt to opt"
-      
