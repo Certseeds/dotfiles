@@ -1,4 +1,5 @@
 *.ant.dev
+*.anthropic.ai
 *.anthropic.com
 *.anthropic.team
 *.antspace.dev
