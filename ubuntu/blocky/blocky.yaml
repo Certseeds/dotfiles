@@ -51,6 +51,7 @@ blocking:
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.winoffice.txt"
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.xiaomi.txt"
       - "https://gcore.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-hosts.txt"
+      - "https://gcore.jsdelivr.net/gh/afwfv/DD-AD@release/hosts"
     custom:
       - /opt/hosts
       - /opt/humanoid.blacklist.txt
