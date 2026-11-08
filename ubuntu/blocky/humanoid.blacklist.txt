@@ -1,6 +1,9 @@
 *.agentskills.io
+*.agentskills.md
 *.agentskills.org
+*.alignment-science-blog.pages.dev
 *.ant.dev
+*.anthropic2590.workers.dev
 *.anthropicai.com
 *.anthropic-cdn.com
 *.antspace.dev
@@ -23,16 +26,32 @@
 *.ddog-gov.com
 *.fedstart.com
 *.growthbook.io
+*.herocorp.ai
 *.interface.feedback
 *.mcpservertest.online
 *.muthos.com
 *.palantirfedstart.com
 *.sillylittleguy.org
+*.skill.md
+*.sparrow-systems.co
+*.wayofco.de
+
+# origin AS399358
+
+app1-cookbook-cinnamon-roll-406235.pages.dev
+cookbook-4xl.pages.dev
+cupcake-matcha-storybook-previews-67.pages.dev
+dario-site.pages.dev
+frt-blog.pages.dev
+site-3wb.pages.dev
+smca-claudex.pages.dev
+storybook-previews.pages.dev
 
 /(?i)(^|\.)modelhardwarestandard\./
 /(?i)(^|\.)claudehaiku\./
 /(?i)(^|\.)claudeopus\./
 /(?i)(^|\.)claudesonnet\./
+/(?i)(^|\.)claudemythos\./
 /(?i)(^|\.)claudefable\./
 /(?i)(^|\.)claude-pages\./
 /(?i)(^|\.)claudepages\./
