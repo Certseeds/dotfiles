@@ -42,7 +42,7 @@ blocking:
       - "https://v.firebog.net/hosts/Easyprivacy.txt"
       - "https://v.firebog.net/hosts/Prigent-Ads.txt"
       - "https://phishing.army/download/phishing_army_blocklist_extended.txt"
-      - "https://urlhaus.abuse.ch/downloads/hostfile/"
+      - "https://gcore.jsdelivr.net/gh/DandelionSprout/adfilt@master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt"
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.apple.txt"
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.huawei.txt"
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.oppo-realme.txt"
