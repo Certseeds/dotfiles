@@ -33,7 +33,7 @@ blocking:
     refreshPeriod: 12h
   denylists:
     defaults:
-      - "https://big.oisd.nl/domainswild"
+      - "https://gcore.jsdelivr.net/gh/sjhgvr/oisd@main/domainswild_big.txt"
       - "https://gcore.jsdelivr.net/gh/StevenBlack/hosts@master/hosts"
       - "https://gcore.jsdelivr.net/gh/VeleSila/yhosts@master/hosts"
       - "https://gcore.jsdelivr.net/gh/FiltersHeroes/KADhosts@master/KADhosts.txt"
@@ -52,6 +52,7 @@ blocking:
       - "https://gcore.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/native.xiaomi.txt"
       - "https://gcore.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-hosts.txt"
       - "https://gcore.jsdelivr.net/gh/afwfv/DD-AD@release/hosts"
+      - "https://gcore.jsdelivr.net/gh/privacy-protection-tools/anti-AD@master/anti-ad-domains.txt"
     custom:
       - /opt/hosts
       - /opt/humanoid.blacklist.txt
