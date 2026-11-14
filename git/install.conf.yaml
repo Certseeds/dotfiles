@@ -8,6 +8,9 @@
     ~/.ssh/config:
       path: .ssh/config
       relink: true
+    ~/.config/git/ignore:
+      path: global.gitignore
+      relink: true
 
 - shell:
   - command: echo "✅ Git and SSH configurations linked."
